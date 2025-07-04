@@ -144,8 +144,8 @@ const ProductSection = () => {
       name: 'جلنط Dpofirs 64',
       description: 'إذا كنت من محبي ألعاب السباق وتبحث عن تجربة قيادة واقعية، جلنط Dpofirs USB هو الخيار المثالي لك. يتميز هذا الجلنط بتصميم متين وتقنيات حديثة تمنحك تحكمًا دقيقًا وأداءً موثوقًا.',
       images: [
-        '/lovable-uploads/f9b8db59-3b41-46c3-a894-bdaacf910538.png',
-        '/lovable-uploads/9b837f18-10b5-4db2-9236-cb0ccebb4c94.png'
+        '/lovable-uploads/2560f5ed-f4bc-4bcc-b41c-b57b6fedeb1a.png',
+        '/lovable-uploads/a40f44e2-5571-4ab7-942a-087f3cd74281.png'
       ],
       features: [
         '• تصميم متين وقوي',
@@ -159,8 +159,8 @@ const ProductSection = () => {
       name: 'دركسون ودواسات سباق G923',
       description: 'لوجيتيك جي 923 هي عجلة سباق عالية الأداء تحدث ثورة في تجربة السباقات. تمت إعادة تصميم جي 923 لدعم نظام التغذية الراجعة الذي يغير قواعد اللعبة، وهو يتميز بخاصية ترو فورس، وهي الجيل الجديد من التقنيات.',
       images: [
-        '/lovable-uploads/f9b8db59-3b41-46c3-a894-bdaacf910538.png',
-        '/lovable-uploads/9b837f18-10b5-4db2-9236-cb0ccebb4c94.png'
+        '/lovable-uploads/3f630a96-b71c-4fb8-9679-95c26c405d86.png',
+        '/lovable-uploads/46bbcc78-2b7c-4a7e-ac1b-a2071f5973b0.png'
       ],
       features: [
         '• تقنية ترو فورس المتقدمة',
@@ -174,8 +174,8 @@ const ProductSection = () => {
       name: 'Thrustmaster T128 دركسون قير دواسات من ثرست ماستر',
       description: 'عجلة قيادة متطورة من Thrustmaster تجمع بين الأداء العالي والتصميم المريح، مصممة لتوفير تجربة سباق واقعية وممتعة للمبتدئين والمحترفين على حد سواء.',
       images: [
-        '/lovable-uploads/f9b8db59-3b41-46c3-a894-bdaacf910538.png',
-        '/lovable-uploads/9b837f18-10b5-4db2-9236-cb0ccebb4c94.png'
+        '/lovable-uploads/993ba08d-0c0c-4cd1-8f7c-a7ba534ba117.png',
+        '/lovable-uploads/71467054-f8aa-40a6-b655-631ae142a971.png'
       ],
       features: [
         '• تصميم مريح ومتطور',
@@ -189,8 +189,7 @@ const ProductSection = () => {
       name: 'قير Thrustmaster TH8A',
       description: 'ارتقِ بقيادة السباقات لديك مع Thrustmaster TH8A Add-On Shifter، المصمم لمن يبحث عن أداء احترافي وتجربة قيادة واقعية بجودة عالية.',
       images: [
-        '/lovable-uploads/f9b8db59-3b41-46c3-a894-bdaacf910538.png',
-        '/lovable-uploads/9b837f18-10b5-4db2-9236-cb0ccebb4c94.png'
+        '/lovable-uploads/f621ba05-60e4-461e-8be6-83383aef11c9.png'
       ],
       features: [
         '• قير احترافي من Thrustmaster',
@@ -204,8 +203,7 @@ const ProductSection = () => {
       name: 'جلنط BROLEO USB – جودة ممتازة وسهولة تشغيل',
       description: 'إذا كنت من محبي ألعاب السباقات وتريد تحكم أدق وتجربة واقعية، جلنط BROLEO هو خيارك المثالي. بتصميمه القوي وأدائه العالي، هذا الجلنط مصمم ليعطيك إحساس قيادة حقيقي ويعزز من تجربتك.',
       images: [
-        '/lovable-uploads/f9b8db59-3b41-46c3-a894-bdaacf910538.png',
-        '/lovable-uploads/9b837f18-10b5-4db2-9236-cb0ccebb4c94.png'
+        '/lovable-uploads/ee8a1ff1-49ea-459e-8f54-3c7ac41e3af7.png'
       ],
       features: [
         '• جودة تصنيع ممتازة',
