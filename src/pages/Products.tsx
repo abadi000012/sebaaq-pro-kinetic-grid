@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
@@ -171,23 +170,6 @@ const Products = () => {
           {renderProductSection(seats, 'مقاعد السباق')}
           {renderProductSection(displayStands, 'حوامل الشاشات')}
           {renderProductSection(accessories, 'الإكسسوارات')}
-        </div>
-
-        <div className="text-center space-y-4 mt-16">
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link 
-              to="/about" 
-              className="bg-charcoal hover:bg-racing-red/20 border border-racing-red/30 text-white px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,0,0,0.3)]"
-            >
-              من نحن
-            </Link>
-            <Link 
-              to="/services" 
-              className="bg-charcoal hover:bg-racing-red/20 border border-racing-red/30 text-white px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,0,0,0.3)]"
-            >
-              خدماتنا
-            </Link>
-          </div>
         </div>
       </div>
     </div>

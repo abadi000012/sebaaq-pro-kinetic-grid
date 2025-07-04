@@ -1,8 +1,7 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Youtube, Instagram, Facebook, Twitter, MessageCircle } from 'lucide-react';
+import { Youtube, Instagram, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -95,12 +94,6 @@ const Footer = () => {
                 <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M19.321 5.562a5.124 5.124 0 0 1-.443-.258 6.228 6.228 0 0 1-1.137-.966c-.849-.849-1.383-1.948-1.409-3.338h-2.946v13.978c0 .22-.022.44-.066.656a3.906 3.906 0 0 1-3.84 3.091c-2.16 0-3.908-1.748-3.908-3.908s1.748-3.908 3.908-3.908c.4 0 .786.061 1.149.175v-2.986a6.874 6.874 0 0 0-1.149-.098c-3.84 0-6.894 3.054-6.894 6.894s3.054 6.894 6.894 6.894c3.84 0 6.894-3.054 6.894-6.894v-7.47a9.154 9.154 0 0 0 5.378 1.72V7.282c-1.006 0-1.947-.236-2.781-.657a6.89 6.89 0 0 1-1.65-1.063z"/>
                 </svg>
-              </a>
-              <a href="#" className="text-muted-grey hover:text-racing-red transition-colors">
-                <Facebook className="w-6 h-6" />
-              </a>
-              <a href="#" className="text-muted-grey hover:text-racing-red transition-colors">
-                <Twitter className="w-6 h-6" />
               </a>
             </div>
             
