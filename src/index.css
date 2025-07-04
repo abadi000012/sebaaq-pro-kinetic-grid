@@ -105,6 +105,14 @@ All colors MUST be HSL.
 }
 
 @layer components {
+  .hero-text-outline {
+    text-shadow: 
+      -1px -1px 0 rgba(255, 0, 0, 0.3),
+      1px -1px 0 rgba(255, 0, 0, 0.3),
+      -1px 1px 0 rgba(255, 0, 0, 0.3),
+      1px 1px 0 rgba(255, 0, 0, 0.3);
+  }
+
   .racing-glow-button {
     @apply bg-racing-red text-white px-8 py-4 rounded-lg font-cairo font-bold text-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,0,0,0.6)] hover:scale-105;
   }
@@ -124,5 +132,21 @@ All colors MUST be HSL.
 
   .hero-gradient {
     background: radial-gradient(ellipse at center, rgba(0,0,0,0.6) 0%, rgba(10,10,10,0.9) 100%);
+  }
+
+  .diagonal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    transform: perspective(1000px) rotateX(5deg);
+    transition: transform 0.3s ease;
+  }
+
+  .diagonal-grid:hover {
+    transform: perspective(1000px) rotateX(0deg);
+  }
+
+  .product-card {
+    @apply bg-gradient-to-br from-charcoal to-deep-black border border-racing-red/30 rounded-xl p-6 shadow-lg hover:shadow-[0_0_30px_rgba(255,0,0,0.2)] transition-all duration-300 hover:-translate-y-2;
   }
 }

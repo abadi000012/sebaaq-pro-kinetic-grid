@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
   const [particles, setParticles] = useState<Array<{ id: number; left: number; delay: number }>>([]);
@@ -48,25 +49,20 @@ const HeroSection = () => {
       {/* Hero Content */}
       <div className="relative z-20 text-center max-w-6xl mx-auto px-6">
         <div className="animate-fade-in">
-          <h1 className="font-cairo font-extrabold text-6xl md:text-8xl lg:text-9xl mb-6 bg-gradient-to-r from-white via-light-grey to-white bg-clip-text text-transparent leading-tight">
+          <h1 className="font-cairo font-black text-6xl md:text-8xl lg:text-9xl mb-6 text-white hero-text-outline leading-tight">
             اطلق البطل الذي بداخلك
           </h1>
           
-          <h2 className="font-cairo font-semibold text-xl md:text-2xl lg:text-3xl mb-12 text-light-grey max-w-4xl mx-auto leading-relaxed">
+          <h2 className="font-cairo font-bold text-xl md:text-2xl lg:text-3xl mb-12 text-light-grey hero-text-outline max-w-4xl mx-auto leading-relaxed">
             اختبر دقة لا مثيل لها. اشعر بمستقبل السباق
           </h2>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Button className="racing-glow-button animate-glow">
-              اكتشف المحاكيات
-            </Button>
-            
-            <Button 
-              variant="outline" 
-              className="border-2 border-white text-white hover:bg-white hover:text-deep-black px-8 py-4 rounded-lg font-cairo font-semibold text-lg transition-all duration-300"
-            >
-              شاهد الرحلة
-            </Button>
+          <div className="flex justify-center">
+            <Link to="/products">
+              <Button className="racing-glow-button animate-glow text-xl px-12 py-6">
+                اكتشف المحاكيات
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
