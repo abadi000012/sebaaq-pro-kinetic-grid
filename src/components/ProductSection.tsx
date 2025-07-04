@@ -7,10 +7,10 @@ const ProductSection = () => {
       name: 'محاكاة القيادة A2 Pro',
       description: 'ابدأ مغامرتك في عالم المحاكاة مع A2 PRO، المنصة الحركية الكاملة التي ترتقي بتجربة المحاكاة إلى مستويات جديدة. تتميز هذه المنصة بمحورين من الحركة: الانحناء الطولي والانحناء الجانبي',
       images: [
-        '/lovable-uploads/a2pro-1.png',
-        '/lovable-uploads/a2pro-2.png',
-        '/lovable-uploads/a2pro-3.png',
-        '/lovable-uploads/a2pro-4.png'
+        '/lovable-uploads/ddaf6303-f564-47a1-a1df-12010f554d24.png',
+        '/lovable-uploads/9cccaa1e-8c23-46fe-a7f1-7eefea6b28a6.png',
+        '/lovable-uploads/3fb38e34-bc46-4944-ac37-a8431a401860.png',
+        '/lovable-uploads/42c6104b-66aa-4fba-837c-b1b5fc18c871.png'
       ],
       features: [
         '• محورين من الحركة (الانحناء الطولي والجانبي)',
@@ -24,9 +24,9 @@ const ProductSection = () => {
       name: 'محاكاة القيادة A3',
       description: 'المنصة الحركية المثالية لمن يبحث عن محاكاة واقعية، حيث توفر ثلاثة محاور من الحركة يعطيك تجربة دقيقة للشعور في محاكاة القيادة، هذه المنصة ليست مجرد جهاز محاكاة عادي—إنها تجربة حقيقية تعكس كل تفاصي',
       images: [
-        '/lovable-uploads/a3-1.png',
-        '/lovable-uploads/a3-2.png',
-        '/lovable-uploads/a3-3.png'
+        '/lovable-uploads/19893509-3604-4099-b51b-2f1aed6230b1.png',
+        '/lovable-uploads/82ffd425-0c66-4075-a310-489bfe8b8cfa.png',
+        '/lovable-uploads/eedd9259-15bd-4f14-84a6-1f27cb1cc168.png'
       ],
       features: [
         '• ثلاثة محاور من الحركة',
@@ -40,43 +40,15 @@ const ProductSection = () => {
       name: 'محاكاة القيادة A6',
       description: 'تجربة محاكاة القيادة المتكامل A6 SEBAAQ ذو ال6 محاور !',
       images: [
-        '/lovable-uploads/a6-1.png',
-        '/lovable-uploads/a6-2.png',
-        '/lovable-uploads/a6-3.png'
+        '/lovable-uploads/6f3ead03-2456-4bbd-b86b-8be60a2aac95.png',
+        '/lovable-uploads/01fa237c-fab2-4b52-857c-27687a795b4a.png',
+        '/lovable-uploads/46c3963d-77ae-4bc3-b544-e73cc00ee8f6.png'
       ],
       features: [
         '• ستة محاور كاملة من الحركة',
         '• تجربة محاكاة متكاملة ومتقدمة',
         '• أعلى مستويات الواقعية',
         '• تقنية حركة احترافية'
-      ]
-    },
-    {
-      id: 'gttrack',
-      name: 'مقعد محاكاة السباق Next Level Racing GTTrack',
-      description: 'مقعد محاكاة السباقات المتطور من نيكست ليفل ريسينج، مصمم خصيصاً لتوفير تجربة قيادة مريحة وواقعية',
-      images: [
-        '/lovable-uploads/gttrack-1.png'
-      ],
-      features: [
-        '• تصميم مريح وقابل للتعديل',
-        '• جودة تصنيع عالية',
-        '• متوافق مع جميع أنواع المقود والبدالات',
-        '• سهولة التركيب والاستخدام'
-      ]
-    },
-    {
-      id: 'elite',
-      name: 'مقعد ELITE محاكاة السباقات نيكست ليفل ريسينج',
-      description: 'مقعد النخبة لمحاكاة السباقات، يوفر أقصى درجات الراحة والاحترافية لتجربة قيادة استثنائية',
-      images: [
-        '/lovable-uploads/elite-1.png'
-      ],
-      features: [
-        '• تصميم احترافي من الدرجة الأولى',
-        '• مواد عالية الجودة ومتينة',
-        '• قابلية تعديل متقدمة',
-        '• مناسب للاستخدام المكثف'
       ]
     }
   ];
