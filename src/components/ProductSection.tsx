@@ -139,6 +139,85 @@ const ProductSection = () => {
     }
   ];
 
+  const accessories = [
+    {
+      id: 'dpofirs-handbrake',
+      name: 'جلنط Dpofirs 64',
+      description: 'إذا كنت من محبي ألعاب السباق وتبحث عن تجربة قيادة واقعية، جلنط Dpofirs USB هو الخيار المثالي لك. يتميز هذا الجلنط بتصميم متين وتقنيات حديثة تمنحك تحكمًا دقيقًا وأداءً موثوقًا.',
+      images: [
+        '/lovable-uploads/dpofirs-handbrake-1.png',
+        '/lovable-uploads/dpofirs-handbrake-2.png'
+      ],
+      features: [
+        '• تصميم متين وقوي',
+        '• تقنيات حديثة للتحكم الدقيق',
+        '• اتصال USB موثوق',
+        '• مثالي لمحبي ألعاب السباق'
+      ]
+    },
+    {
+      id: 'logitech-g923',
+      name: 'دركسون ودواسات سباق G923',
+      description: 'لوجيتيك جي 923 هي عجلة سباق عالية الأداء تحدث ثورة في تجربة السباقات. تمت إعادة تصميم جي 923 لدعم نظام التغذية الراجعة الذي يغير قواعد اللعبة، وهو يتميز بخاصية ترو فورس، وهي الجيل الجديد من التقنيات.',
+      images: [
+        '/lovable-uploads/logitech-g923-1.png',
+        '/lovable-uploads/logitech-g923-2.png',
+        '/lovable-uploads/logitech-g923-3.png'
+      ],
+      features: [
+        '• تقنية ترو فورس المتقدمة',
+        '• نظام تغذية راجعة ثوري',
+        '• عجلة سباق عالية الأداء',
+        '• دواسات احترافية مضمنة'
+      ]
+    },
+    {
+      id: 'thrustmaster-t128',
+      name: 'Thrustmaster T128 دركسون قير دواسات من ثرست ماستر',
+      description: 'عجلة قيادة متطورة من Thrustmaster تجمع بين الأداء العالي والتصميم المريح، مصممة لتوفير تجربة سباق واقعية وممتعة للمبتدئين والمحترفين على حد سواء.',
+      images: [
+        '/lovable-uploads/thrustmaster-t128-1.png',
+        '/lovable-uploads/thrustmaster-t128-2.png'
+      ],
+      features: [
+        '• تصميم مريح ومتطور',
+        '• قير ودواسات احترافية',
+        '• أداء عالي من Thrustmaster',
+        '• مناسب للمبتدئين والمحترفين'
+      ]
+    },
+    {
+      id: 'thrustmaster-th8a',
+      name: 'قير Thrustmaster TH8A',
+      description: 'ارتقِ بقيادة السباقات لديك مع Thrustmaster TH8A Add-On Shifter، المصمم لمن يبحث عن أداء احترافي وتجربة قيادة واقعية بجودة عالية.',
+      images: [
+        '/lovable-uploads/thrustmaster-th8a-1.png',
+        '/lovable-uploads/thrustmaster-th8a-2.png'
+      ],
+      features: [
+        '• قير احترافي من Thrustmaster',
+        '• تجربة قيادة واقعية',
+        '• جودة تصنيع عالية',
+        '• سهولة التركيب والاستخدام'
+      ]
+    },
+    {
+      id: 'broleo-handbrake',
+      name: 'جلنط BROLEO USB – جودة ممتازة وسهولة تشغيل',
+      description: 'إذا كنت من محبي ألعاب السباقات وتريد تحكم أدق وتجربة واقعية، جلنط BROLEO هو خيارك المثالي. بتصميمه القوي وأدائه العالي، هذا الجلنط مصمم ليعطيك إحساس قيادة حقيقي ويعزز من تجربتك.',
+      images: [
+        '/lovable-uploads/broleo-handbrake-1.png',
+        '/lovable-uploads/broleo-handbrake-2.png'
+      ],
+      features: [
+        '• جودة تصنيع ممتازة',
+        '• سهولة التشغيل والتركيب',
+        '• تحكم دقيق وواقعي',
+        '• اتصال USB موثوق'
+      ]
+    }
+  ];
+
   const renderProductSection = (products, title, titleColor = 'text-white') => (
     <div className="mb-24">
       <div className="text-center mb-16 animate-fade-in-up">
@@ -224,9 +303,6 @@ const ProductSection = () => {
 
               {/* Call to Action */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-end">
-                <button className="racing-glow-button">
-                  احجز جلسة تجريبية
-                </button>
                 <button className="bg-transparent border-2 border-racing-red text-racing-red px-8 py-4 rounded-lg font-cairo font-bold text-lg transition-all duration-300 hover:bg-racing-red hover:text-white">
                   تحميل الكتالوج
                 </button>
@@ -258,6 +334,9 @@ const ProductSection = () => {
 
         {/* Display Stands Section */}
         {renderProductSection(displayStands, 'حوامل الشاشات', 'text-racing-red')}
+
+        {/* Accessories Section */}
+        {renderProductSection(accessories, 'الإكسسوارات', 'text-racing-red')}
       </div>
     </section>
   );
