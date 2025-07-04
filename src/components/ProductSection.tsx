@@ -1,8 +1,7 @@
-
 import React from 'react';
 
 const ProductSection = () => {
-  const racingSimulators = [
+  const products = [
     {
       id: 'a2-pro',
       name: 'محاكاة القيادة A2 Pro',
@@ -51,10 +50,7 @@ const ProductSection = () => {
         '• أعلى مستويات الواقعية',
         '• تقنية حركة احترافية'
       ]
-    }
-  ];
-
-  const racingSeats = [
+    },
     {
       id: 'gttrack',
       name: 'مقعد محاكاة السباق Next Level Racing GTTrack',
@@ -85,93 +81,6 @@ const ProductSection = () => {
     }
   ];
 
-  const renderProductCard = (product: any, index: number) => (
-    <div 
-      key={product.id} 
-      className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center animate-fade-in-up ${
-        index % 2 === 1 ? 'lg:flex-row-reverse' : ''
-      }`}
-      style={{ animationDelay: `${index * 0.2}s` }}
-    >
-      {/* Product Images */}
-      <div className={`space-y-6 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-        <div className="grid grid-cols-2 gap-4">
-          {product.images.slice(0, 4).map((image: string, imgIndex: number) => (
-            <div 
-              key={imgIndex}
-              className={`aspect-square rounded-2xl overflow-hidden shadow-2xl border border-light-grey/10 ${
-                imgIndex === 0 ? 'col-span-2' : ''
-              }`}
-            >
-              <img 
-                src={image}
-                alt={`${product.name} - صورة ${imgIndex + 1}`}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Product Details */}
-      <div className={`text-center lg:text-right ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-        <h3 className="font-cairo font-bold text-3xl md:text-4xl mb-6 text-white leading-tight">
-          {product.name}
-        </h3>
-        
-        <p className="font-cairo text-muted-grey text-lg leading-relaxed mb-8">
-          {product.description}
-        </p>
-
-        {/* Features */}
-        <div className="space-y-4 mb-8">
-          <div className="bg-gradient-to-r from-racing-red/20 to-transparent p-4 rounded-lg border border-racing-red/30">
-            <h4 className="font-cairo font-semibold text-racing-red text-xl mb-2">
-              المواصفات الرئيسية
-            </h4>
-            <ul className="font-cairo text-white space-y-2 text-right">
-              {product.features.map((feature: string, featureIndex: number) => (
-                <li key={featureIndex}>{feature}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        {/* Pricing */}
-        <div className="bg-charcoal/80 backdrop-blur-sm border border-light-grey/20 rounded-xl p-6 mb-8">
-          <div className="flex justify-between items-center">
-            <div className="text-right">
-              <h4 className="font-cairo font-bold text-2xl text-white mb-2">
-                {product.name}
-              </h4>
-              <p className="font-cairo text-muted-grey">
-                الحل الأمثل للمبتدئين والمحترفين
-              </p>
-            </div>
-            <div className="text-center">
-              <p className="font-cairo font-bold text-xl text-racing-red mb-2">
-                اتصل للاستفسار عن السعر
-              </p>
-              <button className="racing-glow-button text-sm px-6 py-2">
-                تواصل معنا
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Call to Action */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-end">
-          <button className="racing-glow-button">
-            احجز جلسة تجريبية
-          </button>
-          <button className="bg-transparent border-2 border-racing-red text-racing-red px-8 py-4 rounded-lg font-cairo font-bold text-lg transition-all duration-300 hover:bg-racing-red hover:text-white">
-            تحميل الكتالوج
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-
   return (
     <section className="py-24 px-6 bg-gradient-to-b from-deep-black via-charcoal to-deep-black">
       <div className="max-w-7xl mx-auto">
@@ -184,36 +93,93 @@ const ProductSection = () => {
           </p>
         </div>
 
-        {/* Racing Simulators Section */}
-        <div className="mb-20">
-          <div className="text-center mb-12">
-            <h3 className="font-cairo font-bold text-3xl md:text-4xl mb-4 text-racing-red">
-              محاكيات السباق
-            </h3>
-            <p className="font-cairo text-muted-grey text-lg">
-              أنظمة محاكاة متطورة بتقنيات حركة احترافية
-            </p>
-          </div>
-          
-          <div className="space-y-24">
-            {racingSimulators.map((product, index) => renderProductCard(product, index))}
-          </div>
-        </div>
+        <div className="space-y-24">
+          {products.map((product, index) => (
+            <div 
+              key={product.id} 
+              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center animate-fade-in-up ${
+                index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+              }`}
+              style={{ animationDelay: `${index * 0.2}s` }}
+            >
+              {/* Product Images */}
+              <div className={`space-y-6 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                <div className="grid grid-cols-2 gap-4">
+                  {product.images.slice(0, 4).map((image, imgIndex) => (
+                    <div 
+                      key={imgIndex}
+                      className={`aspect-square rounded-2xl overflow-hidden shadow-2xl border border-light-grey/10 ${
+                        imgIndex === 0 ? 'col-span-2' : ''
+                      }`}
+                    >
+                      <img 
+                        src={image}
+                        alt={`${product.name} - صورة ${imgIndex + 1}`}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
 
-        {/* Racing Seats Section */}
-        <div>
-          <div className="text-center mb-12">
-            <h3 className="font-cairo font-bold text-3xl md:text-4xl mb-4 text-racing-red">
-              مقاعد محاكاة السباق
-            </h3>
-            <p className="font-cairo text-muted-grey text-lg">
-              مقاعد احترافية مصممة للراحة والأداء الأمثل
-            </p>
-          </div>
-          
-          <div className="space-y-24">
-            {racingSeats.map((product, index) => renderProductCard(product, index))}
-          </div>
+              {/* Product Details */}
+              <div className={`text-center lg:text-right ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                <h3 className="font-cairo font-bold text-3xl md:text-4xl mb-6 text-white leading-tight">
+                  {product.name}
+                </h3>
+                
+                <p className="font-cairo text-muted-grey text-lg leading-relaxed mb-8">
+                  {product.description}
+                </p>
+
+                {/* Features */}
+                <div className="space-y-4 mb-8">
+                  <div className="bg-gradient-to-r from-racing-red/20 to-transparent p-4 rounded-lg border border-racing-red/30">
+                    <h4 className="font-cairo font-semibold text-racing-red text-xl mb-2">
+                      المواصفات الرئيسية
+                    </h4>
+                    <ul className="font-cairo text-white space-y-2 text-right">
+                      {product.features.map((feature, featureIndex) => (
+                        <li key={featureIndex}>{feature}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Pricing */}
+                <div className="bg-charcoal/80 backdrop-blur-sm border border-light-grey/20 rounded-xl p-6 mb-8">
+                  <div className="flex justify-between items-center">
+                    <div className="text-right">
+                      <h4 className="font-cairo font-bold text-2xl text-white mb-2">
+                        {product.name}
+                      </h4>
+                      <p className="font-cairo text-muted-grey">
+                        الحل الأمثل للمبتدئين والمحترفين
+                      </p>
+                    </div>
+                    <div className="text-center">
+                      <p className="font-cairo font-bold text-xl text-racing-red mb-2">
+                        اتصل للاستفسار عن السعر
+                      </p>
+                      <button className="racing-glow-button text-sm px-6 py-2">
+                        تواصل معنا
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Call to Action */}
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-end">
+                  <button className="racing-glow-button">
+                    احجز جلسة تجريبية
+                  </button>
+                  <button className="bg-transparent border-2 border-racing-red text-racing-red px-8 py-4 rounded-lg font-cairo font-bold text-lg transition-all duration-300 hover:bg-racing-red hover:text-white">
+                    تحميل الكتالوج
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
