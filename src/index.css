@@ -125,4 +125,30 @@ All colors MUST be HSL.
   .hero-gradient {
     background: radial-gradient(ellipse at center, rgba(0,0,0,0.6) 0%, rgba(10,10,10,0.9) 100%);
   }
+
+  .bold-text-outline {
+    font-weight: 900;
+    text-shadow: 
+      -2px -2px 0 #FF0000,
+      2px -2px 0 #FF0000,
+      -2px 2px 0 #FF0000,
+      2px 2px 0 #FF0000,
+      -3px 0 0 #FF0000,
+      3px 0 0 #FF0000,
+      0 -3px 0 #FF0000,
+      0 3px 0 #FF0000;
+  }
+
+  .hero-title-outline {
+    font-weight: 900;
+    text-shadow: 
+      -3px -3px 0 #FF0000,
+      3px -3px 0 #FF0000,
+      -3px 3px 0 #FF0000,
+      3px 3px 0 #FF0000,
+      -4px 0 0 #FF0000,
+      4px 0 0 #FF0000,
+      0 -4px 0 #FF0000,
+      0 4px 0 #FF0000;
+  }
 }
