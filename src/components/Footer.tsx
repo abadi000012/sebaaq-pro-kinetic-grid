@@ -1,0 +1,118 @@
+
+import React from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Youtube, Instagram, Facebook, Twitter } from 'lucide-react';
+
+const Footer = () => {
+  return (
+    <footer className="bg-deep-black border-t border-charcoal">
+      {/* CTA Section */}
+      <section className="py-20 px-6">
+        <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
+          <h2 className="font-exo font-bold text-4xl md:text-5xl lg:text-6xl mb-6 text-white">
+            Ready to Dominate the Digital Asphalt?
+          </h2>
+          <p className="font-open-sans font-light text-lg md:text-xl text-white mb-10 leading-relaxed">
+            Your journey to the ultimate racing simulation starts with SeBaaq Pro.
+          </p>
+          
+          <Button className="racing-glow-button mb-12">
+            Explore Our Full Range
+          </Button>
+
+          {/* Newsletter Signup */}
+          <div className="max-w-2xl mx-auto">
+            <h3 className="font-montserrat font-semibold text-xl mb-4 text-white">
+              Join the SeBaaq Pro Collective
+            </h3>
+            <p className="font-open-sans text-muted-grey mb-6">
+              Get exclusive insights, new product announcements, and pro tips directly.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 bg-charcoal border-light-grey/30 text-white placeholder:text-muted-grey focus:border-racing-red"
+              />
+              <Button className="racing-glow-button">
+                Subscribe
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer Links */}
+      <div className="border-t border-charcoal py-12 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+            <div>
+              <h4 className="font-montserrat font-semibold text-white mb-4">Products</h4>
+              <ul className="space-y-2 font-open-sans text-muted-grey">
+                <li><a href="#" className="hover:text-racing-red transition-colors">Motion Platforms</a></li>
+                <li><a href="#" className="hover:text-racing-red transition-colors">Racing Wheels</a></li>
+                <li><a href="#" className="hover:text-racing-red transition-colors">Pedal Systems</a></li>
+                <li><a href="#" className="hover:text-racing-red transition-colors">Complete Rigs</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="font-montserrat font-semibold text-white mb-4">Support</h4>
+              <ul className="space-y-2 font-open-sans text-muted-grey">
+                <li><a href="#" className="hover:text-racing-red transition-colors">Contact Support</a></li>
+                <li><a href="#" className="hover:text-racing-red transition-colors">FAQ</a></li>
+                <li><a href="#" className="hover:text-racing-red transition-colors">Shipping & Returns</a></li>
+                <li><a href="#" className="hover:text-racing-red transition-colors">Warranty & Care</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="font-montserrat font-semibold text-white mb-4">Company</h4>
+              <ul className="space-y-2 font-open-sans text-muted-grey">
+                <li><a href="#" className="hover:text-racing-red transition-colors">About SeBaaq Pro</a></li>
+                <li><a href="#" className="hover:text-racing-red transition-colors">Careers</a></li>
+                <li><a href="#" className="hover:text-racing-red transition-colors">Press</a></li>
+                <li><a href="#" className="hover:text-racing-red transition-colors">Partners</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="font-montserrat font-semibold text-white mb-4">Legal</h4>
+              <ul className="space-y-2 font-open-sans text-muted-grey">
+                <li><a href="#" className="hover:text-racing-red transition-colors">Privacy Policy</a></li>
+                <li><a href="#" className="hover:text-racing-red transition-colors">Terms of Service</a></li>
+                <li><a href="#" className="hover:text-racing-red transition-colors">Cookie Policy</a></li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Social Media & Copyright */}
+          <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-charcoal">
+            <div className="flex space-x-6 mb-4 md:mb-0">
+              <a href="#" className="text-muted-grey hover:text-racing-red transition-colors">
+                <Youtube className="w-6 h-6" />
+              </a>
+              <a href="#" className="text-muted-grey hover:text-racing-red transition-colors">
+                <Instagram className="w-6 h-6" />
+              </a>
+              <a href="#" className="text-muted-grey hover:text-racing-red transition-colors">
+                <Facebook className="w-6 h-6" />
+              </a>
+              <a href="#" className="text-muted-grey hover:text-racing-red transition-colors">
+                <Twitter className="w-6 h-6" />
+              </a>
+            </div>
+            
+            <p className="font-open-sans text-muted-grey text-sm">
+              © 2025 SeBaaq Pro. All Rights Reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -39,19 +40,12 @@ All colors MUST be HSL.
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -100,6 +94,30 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-deep-black text-white font-open-sans;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .racing-glow-button {
+    @apply bg-racing-red text-white px-8 py-4 rounded-lg font-exo font-bold text-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,0,0,0.6)] hover:scale-105;
+  }
+  
+  .premium-card {
+    @apply bg-charcoal/80 backdrop-blur-sm border border-light-grey/20 rounded-xl p-6 transition-all duration-300 hover:border-racing-red/50 hover:shadow-[0_0_30px_rgba(255,0,0,0.1)];
+  }
+
+  .particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: rgba(255, 0, 0, 0.6);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .hero-gradient {
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.6) 0%, rgba(10,10,10,0.9) 100%);
   }
 }
