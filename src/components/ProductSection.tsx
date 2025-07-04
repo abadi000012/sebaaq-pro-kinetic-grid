@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const ProductSection = () => {
@@ -144,8 +145,7 @@ const ProductSection = () => {
       name: 'جلنط Dpofirs 64',
       description: 'إذا كنت من محبي ألعاب السباق وتبحث عن تجربة قيادة واقعية، جلنط Dpofirs USB هو الخيار المثالي لك. يتميز هذا الجلنط بتصميم متين وتقنيات حديثة تمنحك تحكمًا دقيقًا وأداءً موثوقًا.',
       images: [
-        '/lovable-uploads/2560f5ed-f4bc-4bcc-b41c-b57b6fedeb1a.png',
-        '/lovable-uploads/a40f44e2-5571-4ab7-942a-087f3cd74281.png'
+        '/lovable-uploads/ee8a1ff1-49ea-459e-8f54-3c7ac41e3af7.png'
       ],
       features: [
         '• تصميم متين وقوي',
@@ -203,7 +203,8 @@ const ProductSection = () => {
       name: 'جلنط BROLEO USB – جودة ممتازة وسهولة تشغيل',
       description: 'إذا كنت من محبي ألعاب السباقات وتريد تحكم أدق وتجربة واقعية، جلنط BROLEO هو خيارك المثالي. بتصميمه القوي وأدائه العالي، هذا الجلنط مصمم ليعطيك إحساس قيادة حقيقي ويعزز من تجربتك.',
       images: [
-        '/lovable-uploads/ee8a1ff1-49ea-459e-8f54-3c7ac41e3af7.png'
+        '/lovable-uploads/2560f5ed-f4bc-4bcc-b41c-b57b6fedeb1a.png',
+        '/lovable-uploads/a40f44e2-5571-4ab7-942a-087f3cd74281.png'
       ],
       features: [
         '• جودة تصنيع ممتازة',
