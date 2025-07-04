@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 
 const videos = [
   {
@@ -23,50 +23,6 @@ const videos = [
 ];
 
 const VideoSection = () => {
-  const [visibleVideos, setVisibleVideos] = useState(new Set());
-  const videoRefs = useRef([]);
-
-  useEffect(() => {
-    const observers = videoRefs.current.map((ref, index) => {
-      if (!ref) return null;
-      
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            const iframe = entry.target.querySelector('iframe');
-            if (entry.isIntersecting) {
-              setVisibleVideos(prev => new Set([...prev, index]));
-              if (iframe) {
-                const src = iframe.src;
-                if (!src.includes('autoplay=1')) {
-                  iframe.src = src.replace('modestbranding=1', 'modestbranding=1&autoplay=1&mute=1');
-                }
-              }
-            } else {
-              setVisibleVideos(prev => {
-                const newSet = new Set(prev);
-                newSet.delete(index);
-                return newSet;
-              });
-              if (iframe) {
-                const src = iframe.src;
-                iframe.src = src.replace('&autoplay=1&mute=1', '');
-              }
-            }
-          });
-        },
-        { threshold: 0.5 }
-      );
-
-      observer.observe(ref);
-      return observer;
-    });
-
-    return () => {
-      observers.forEach(observer => observer?.disconnect());
-    };
-  }, []);
-
   return (
     <section className="py-24 px-6 bg-gradient-to-b from-charcoal via-deep-black to-charcoal">
       <div className="max-w-7xl mx-auto">
@@ -83,7 +39,6 @@ const VideoSection = () => {
           {videos.map((video, index) => (
             <div
               key={video.id}
-              ref={el => videoRefs.current[index] = el}
               className={`animate-fade-in-up ${
                 video.featured 
                   ? 'grid grid-cols-1 lg:grid-cols-5 gap-8 items-center' 
