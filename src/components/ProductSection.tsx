@@ -1,215 +1,332 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
 
 const ProductSection = () => {
-  const featuredSimulators = [
+  const simulators = [
     {
-      id: 'a6',
-      name: 'محاكاة القيادة A6',
-      description: 'تجربة محاكاة القيادة المتكامل A6 SEBAAQ ذو ال6 محاور - القمة في تجربة المحاكاة!',
-      image: '/lovable-uploads/6f3ead03-2456-4bbd-b86b-8be60a2aac95.png',
-      features: [
-        '• ستة محاور كاملة من الحركة',
-        '• تجربة محاكاة متكاملة ومتقدمة',
-        '• أعلى مستويات الواقعية',
-        '• تقنية حركة احترافية'
+      id: 'a2-pro',
+      name: 'محاكاة القيادة A2 Pro',
+      description: 'ابدأ مغامرتك في عالم المحاكاة مع A2 PRO، المنصة الحركية الكاملة التي ترتقي بتجربة المحاكاة إلى مستويات جديدة. تتميز هذه المنصة بمحورين من الحركة: الانحناء الطولي والانحناء الجانبي',
+      images: [
+        '/lovable-uploads/ddaf6303-f564-47a1-a1df-12010f554d24.png',
+        '/lovable-uploads/9cccaa1e-8c23-46fe-a7f1-7eefea6b28a6.png',
+        '/lovable-uploads/3fb38e34-bc46-4944-ac37-a8431a401860.png',
+        '/lovable-uploads/42c6104b-66aa-4fba-837c-b1b5fc18c871.png'
       ],
-      badge: 'الأكثر تطوراً'
+      features: [
+        '• محورين من الحركة (الانحناء الطولي والجانبي)',
+        '• تصميم مريح قابل للتعديل',
+        '• نظام حركة متطور',
+        '• مقود وبدالات عالية الجودة'
+      ]
     },
     {
       id: 'a3',
       name: 'محاكاة القيادة A3',
-      description: 'المنصة الحركية المثالية لمن يبحث عن محاكاة واقعية بثلاثة محاور من الحركة.',
-      image: '/lovable-uploads/19893509-3604-4099-b51b-2f1aed6230b1.png',
+      description: 'المنصة الحركية المثالية لمن يبحث عن محاكاة واقعية، حيث توفر ثلاثة محاور من الحركة يعطيك تجربة دقيقة للشعور في محاكاة القيادة، هذه المنصة ليست مجرد جهاز محاكاة عادي—إنها تجربة حقيقية تعكس كل تفاصي',
+      images: [
+        '/lovable-uploads/19893509-3604-4099-b51b-2f1aed6230b1.png',
+        '/lovable-uploads/82ffd425-0c66-4075-a310-489bfe8b8cfa.png',
+        '/lovable-uploads/eedd9259-15bd-4f14-84a6-1f27cb1cc168.png'
+      ],
       features: [
         '• ثلاثة محاور من الحركة',
         '• تجربة محاكاة واقعية ودقيقة',
         '• تصميم احترافي متقدم',
         '• دعم جميع ألعاب السباق الشهيرة'
-      ],
-      badge: 'الأكثر شعبية'
+      ]
     },
     {
-      id: 'a2-pro',
-      name: 'محاكاة القيادة A2 Pro',
-      description: 'ابدأ مغامرتك في عالم المحاكاة مع A2 PRO - المنصة الحركية الكاملة للمبتدئين.',
-      image: '/lovable-uploads/ddaf6303-f564-47a1-a1df-12010f554d24.png',
+      id: 'a6',
+      name: 'محاكاة القيادة A6',
+      description: 'تجربة محاكاة القيادة المتكامل A6 SEBAAQ ذو ال6 محاور !',
+      images: [
+        '/lovable-uploads/6f3ead03-2456-4bbd-b86b-8be60a2aac95.png',
+        '/lovable-uploads/01fa237c-fab2-4b52-857c-27687a795b4a.png',
+        '/lovable-uploads/46c3963d-77ae-4bc3-b544-e73cc00ee8f6.png'
+      ],
       features: [
-        '• محورين من الحركة',
-        '• تصميم مريح قابل للتعديل',
-        '• نظام حركة متطور',
-        '• مقود وبدالات عالية الجودة'
-      ],
-      badge: 'مثالي للمبتدئين'
+        '• ستة محاور كاملة من الحركة',
+        '• تجربة محاكاة متكاملة ومتقدمة',
+        '• أعلى مستويات الواقعية',
+        '• تقنية حركة احترافية'
+      ]
     }
   ];
 
-  const quickAccessories = [
+  const racingSeats = [
     {
-      name: 'دركسون G923',
-      image: '/lovable-uploads/3f630a96-b71c-4fb8-9679-95c26c405d86.png',
-      description: 'تقنية ترو فورس المتقدمة'
+      id: 'gttrack',
+      name: 'مقعد محاكاة السباق Next Level Racing GTTrack',
+      description: 'مقعد محاكاة السباق المتطور من Next Level Racing يوفر تجربة قيادة واقعية ومريحة للغاية مع تصميم احترافي يناسب جلسات السباق الطويلة',
+      images: [
+        '/lovable-uploads/27bfe8d3-28d1-4885-a5fc-55961e9c05dc.png',
+        '/lovable-uploads/dd135d17-4bde-4784-bd55-0c0b4dc2bce1.png',
+        '/lovable-uploads/34afe112-261d-41ea-86c5-46cad450fe89.png'
+      ],
+      features: [
+        '• تصميم مريح ومتطور',
+        '• قابل للتعديل بالكامل',
+        '• مواد عالية الجودة',
+        '• متوافق مع جميع أنواع المحاكيات'
+      ]
     },
     {
-      name: 'قير TH8A',
-      image: '/lovable-uploads/f621ba05-60e4-461e-8be6-83383aef11c9.png',
-      description: 'قير احترافي من Thrustmaster'
+      id: 'elite-seat',
+      name: 'مقعد ELITE محاكاة السباقات نيكست ليفل ريسينج',
+      description: 'مقعد ELITE المتميز يوفر أقصى مستويات الراحة والأداء لمحبي محاكاة السباق مع تقنيات متقدمة وتصميم أنيق',
+      images: [
+        '/lovable-uploads/157b2ab3-b1f0-4f57-b008-3a05b52e07d4.png',
+        '/lovable-uploads/8b02efed-9ed8-4744-933f-ba7babbf0877.png'
+      ],
+      features: [
+        '• تصميم ELITE متميز',
+        '• راحة فائقة للجلسات الطويلة',
+        '• مواد فاخرة عالية الجودة',
+        '• نظام تعديل متقدم'
+      ]
     }
   ];
 
-  return (
-    <section className="py-24 px-6 bg-gradient-to-b from-deep-black via-charcoal to-deep-black">
-      <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="font-cairo hero-title-outline text-4xl md:text-5xl lg:text-6xl mb-6 text-white">
-            منتجاتنا المميزة
-          </h2>
-          <p className="font-cairo subtle-text-outline text-lg md:text-xl text-white max-w-3xl mx-auto leading-relaxed">
-            اكتشف مجموعة محاكيات السباق المتطورة من سيباق برو - حيث تلتقي التقنية بالواقعية
-          </p>
-        </div>
+  const displayStands = [
+    {
+      id: 'thermaltake-triple',
+      name: 'حامل شاشات سباق ثلاثي من Thermaltake',
+      description: 'احصل على تجربة سباق غامرة واحترافية مع حامل الشاشات الثلاثي من Thermaltake، المصمم خصيصاً لمحبي محاكاة السباق والألعاب الاحترافية',
+      images: [
+        '/lovable-uploads/0207fd82-32d1-4749-b1ae-52d182ac2990.png',
+        '/lovable-uploads/a1696c55-9b57-46ab-b849-ec634115ebbf.png'
+      ],
+      features: [
+        '• دعم ثلاث شاشات بأحجام متنوعة',
+        '• تصميم قوي ومتين من Thermaltake',
+        '• سهولة التركيب والتعديل',
+        '• مثالي لمحاكاة السباق الاحترافية'
+      ]
+    },
+    {
+      id: 'quad-monitor-stand',
+      name: 'حامل شاشة مستقل رباعي',
+      description: 'دعم أربع شاشات: يدعم حتى 4 شاشات بحجم يتراوح بين 21 إلى 43 بوصة، ليمنحك عرضاً بانورامياً مذهلاً وتجربة غامرة لا مثيل لها',
+      images: [
+        '/lovable-uploads/27b513c9-7cf3-4ace-a721-aae6276e2b5a.png',
+        '/lovable-uploads/605d2f9a-cb32-48b2-bf78-750bb2df2435.png',
+        '/lovable-uploads/ef128616-a7d6-49d7-b06c-638d45cea322.png'
+      ],
+      features: [
+        '• دعم 4 شاشات (21-43 بوصة)',
+        '• عرض بانورامي مذهل',
+        '• تصميم مستقل قوي',
+        '• قابلية تعديل شاملة'
+      ]
+    },
+    {
+      id: 'next-level-triple',
+      name: 'حامل شاشة ثلاثي من Next Level Racing',
+      description: 'ارتقِ بتجربة اللعب والمحاكاة إلى مستوى احترافي مع حامل الشاشات الثلاثية من Next Level Racing، المصمم لتوفير أفضل زوايا المشاهدة',
+      images: [
+        '/lovable-uploads/41ed94f9-93b7-46e0-b9cc-4f4f7948af05.png',
+        '/lovable-uploads/a4fcbc50-690a-4e0b-8ac5-324f4d98b2b1.png',
+        '/lovable-uploads/9c257218-9139-4d76-9952-337df7ded453.png',
+        '/lovable-uploads/32535fa5-b196-4c48-8d63-fada565c5bff.png'
+      ],
+      features: [
+        '• تصميم احترافي من Next Level Racing',
+        '• دعم ثلاث شاشات بزوايا مثالية',
+        '• جودة تصنيع عالية',
+        '• متوافق مع معظم أحجام الشاشات'
+      ]
+    }
+  ];
 
-        {/* Featured Racing Simulators */}
-        <div className="mb-20">
-          <h3 className="font-cairo red-text-white-outline text-3xl md:text-4xl text-center mb-12">
-            محاكيات السباق الاحترافية
-          </h3>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-            {featuredSimulators.map((simulator, index) => (
-              <div 
-                key={simulator.id} 
-                className={`premium-card group relative overflow-hidden ${
-                  index === 0 ? 'lg:col-span-1 lg:row-span-2 transform lg:scale-110' : ''
-                }`}
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                {/* Badge */}
-                <div className="absolute top-4 right-4 z-10">
-                  <span className="bg-racing-red text-white px-3 py-1 rounded-full text-sm font-cairo font-bold">
-                    {simulator.badge}
-                  </span>
-                </div>
+  const accessories = [
+    {
+      id: 'dpofirs-handbrake',
+      name: 'جلنط Dpofirs 64',
+      description: 'إذا كنت من محبي ألعاب السباق وتبحث عن تجربة قيادة واقعية، جلنط Dpofirs USB هو الخيار المثالي لك. يتميز هذا الجلنط بتصميم متين وتقنيات حديثة تمنحك تحكمًا دقيقًا وأداءً موثوقًا.',
+      images: [
+        '/lovable-uploads/ee8a1ff1-49ea-459e-8f54-3c7ac41e3af7.png'
+      ],
+      features: [
+        '• تصميم متين وقوي',
+        '• تقنيات حديثة للتحكم الدقيق',
+        '• اتصال USB موثوق',
+        '• مثالي لمحبي ألعاب السباق'
+      ]
+    },
+    {
+      id: 'logitech-g923',
+      name: 'دركسون ودواسات سباق G923',
+      description: 'لوجيتيك جي 923 هي عجلة سباق عالية الأداء تحدث ثورة في تجربة السباقات. تمت إعادة تصميم جي 923 لدعم نظام التغذية الراجعة الذي يغير قواعد اللعبة، وهو يتميز بخاصية ترو فورس، وهي الجيل الجديد من التقنيات.',
+      images: [
+        '/lovable-uploads/3f630a96-b71c-4fb8-9679-95c26c405d86.png',
+        '/lovable-uploads/46bbcc78-2b7c-4a7e-ac1b-a2071f5973b0.png'
+      ],
+      features: [
+        '• تقنية ترو فورس المتقدمة',
+        '• نظام تغذية راجعة ثوري',
+        '• عجلة سباق عالية الأداء',
+        '• دواسات احترافية مضمنة'
+      ]
+    },
+    {
+      id: 'thrustmaster-t128',
+      name: 'Thrustmaster T128 دركسون قير دواسات من ثرست ماستر',
+      description: 'عجلة قيادة متطورة من Thrustmaster تجمع بين الأداء العالي والتصميم المريح، مصممة لتوفير تجربة سباق واقعية وممتعة للمبتدئين والمحترفين على حد سواء.',
+      images: [
+        '/lovable-uploads/993ba08d-0c0c-4cd1-8f7c-a7ba534ba117.png',
+        '/lovable-uploads/71467054-f8aa-40a6-b655-631ae142a971.png'
+      ],
+      features: [
+        '• تصميم مريح ومتطور',
+        '• قير ودواسات احترافية',
+        '• أداء عالي من Thrustmaster',
+        '• مناسب للمبتدئين والمحترفين'
+      ]
+    },
+    {
+      id: 'thrustmaster-th8a',
+      name: 'قير Thrustmaster TH8A',
+      description: 'ارتقِ بقيادة السباقات لديك مع Thrustmaster TH8A Add-On Shifter، المصمم لمن يبحث عن أداء احترافي وتجربة قيادة واقعية بجودة عالية.',
+      images: [
+        '/lovable-uploads/f621ba05-60e4-461e-8be6-83383aef11c9.png'
+      ],
+      features: [
+        '• قير احترافي من Thrustmaster',
+        '• تجربة قيادة واقعية',
+        '• جودة تصنيع عالية',
+        '• سهولة التركيب والاستخدام'
+      ]
+    },
+    {
+      id: 'broleo-handbrake',
+      name: 'جلنط BROLEO USB – جودة ممتازة وسهولة تشغيل',
+      description: 'إذا كنت من محبي ألعاب السباقات وتريد تحكم أدق وتجربة واقعية، جلنط BROLEO هو خيارك المثالي. بتصميمه القوي وأدائه العالي، هذا الجلنط مصمم ليعطيك إحساس قيادة حقيقي ويعزز من تجربتك.',
+      images: [
+        '/lovable-uploads/2560f5ed-f4bc-4bcc-b41c-b57b6fedeb1a.png',
+        '/lovable-uploads/a40f44e2-5571-4ab7-942a-087f3cd74281.png'
+      ],
+      features: [
+        '• جودة تصنيع ممتازة',
+        '• سهولة التشغيل والتركيب',
+        '• تحكم دقيق وواقعي',
+        '• اتصال USB موثوق'
+      ]
+    }
+  ];
 
-                {/* Image */}
-                <div className={`aspect-square mb-6 rounded-xl overflow-hidden ${
-                  index === 0 ? 'lg:aspect-[4/5]' : ''
-                }`}>
-                  <img 
-                    src={simulator.image}
-                    alt={simulator.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
+  const renderProductSection = (products, title, titleColor = 'text-white') => (
+    <div className="mb-24">
+      <div className="text-center mb-16 animate-fade-in-up">
+        <h3 className={`font-cairo font-bold text-3xl md:text-4xl lg:text-5xl mb-6 ${titleColor}`}>
+          {title}
+        </h3>
+      </div>
 
-                {/* Content */}
-                <div className="space-y-4">
-                  <h4 className={`font-cairo subtle-text-outline text-white leading-tight ${
-                    index === 0 ? 'text-2xl md:text-3xl' : 'text-xl md:text-2xl'
-                  }`}>
-                    {simulator.name}
-                  </h4>
-                  
-                  <p className={`font-cairo text-muted-grey leading-relaxed ${
-                    index === 0 ? 'text-base' : 'text-sm'
-                  }`}>
-                    {simulator.description}
-                  </p>
-
-                  {/* Features - Show more for main featured item */}
-                  <div className="space-y-2">
-                    {simulator.features.slice(0, index === 0 ? 4 : 2).map((feature, featureIndex) => (
-                      <p key={featureIndex} className="font-cairo text-light-grey text-sm">
-                        {feature}
-                      </p>
-                    ))}
+      <div className="space-y-24">
+        {products.map((product, index) => (
+          <div 
+            key={product.id} 
+            className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center animate-fade-in-up ${
+              index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+            }`}
+            style={{ animationDelay: `${index * 0.2}s` }}
+          >
+            {/* Product Images */}
+            <div className={`space-y-6 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+              <div className="grid grid-cols-2 gap-4">
+                {product.images.slice(0, 4).map((image, imgIndex) => (
+                  <div 
+                    key={imgIndex}
+                    className={`aspect-square rounded-2xl overflow-hidden shadow-2xl border border-light-grey/10 ${
+                      imgIndex === 0 ? 'col-span-2' : ''
+                    }`}
+                  >
+                    <img 
+                      src={image}
+                      alt={`${product.name} - صورة ${imgIndex + 1}`}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
                   </div>
+                ))}
+              </div>
+            </div>
 
-                  {/* CTA */}
-                  <div className="pt-4">
-                    <button className={`racing-glow-button w-full ${
-                      index === 0 ? 'text-lg py-4' : 'text-sm py-3'
-                    }`}>
-                      اكتشف المزيد
+            {/* Product Details */}
+            <div className={`text-center lg:text-right ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+              <h4 className="font-cairo font-bold text-3xl md:text-4xl mb-6 text-white leading-tight">
+                {product.name}
+              </h4>
+              
+              <p className="font-cairo text-muted-grey text-lg leading-relaxed mb-8">
+                {product.description}
+              </p>
+
+              {/* Features */}
+              <div className="space-y-4 mb-8">
+                <div className="bg-gradient-to-r from-racing-red/20 to-transparent p-4 rounded-lg border border-racing-red/30">
+                  <h5 className="font-cairo font-semibold text-racing-red text-xl mb-2">
+                    المواصفات الرئيسية
+                  </h5>
+                  <ul className="font-cairo text-white space-y-2 text-right">
+                    {product.features.map((feature, featureIndex) => (
+                      <li key={featureIndex}>{feature}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* Pricing */}
+              <div className="bg-charcoal/80 backdrop-blur-sm border border-light-grey/20 rounded-xl p-6 mb-8">
+                <div className="flex justify-between items-center">
+                  <div className="text-right">
+                    <h5 className="font-cairo font-bold text-2xl text-white mb-2">
+                      {product.name}
+                    </h5>
+                    <p className="font-cairo text-muted-grey">
+                      الحل الأمثل للمبتدئين والمحترفين
+                    </p>
+                  </div>
+                  <div className="text-center">
+                    <p className="font-cairo font-bold text-xl text-racing-red mb-2">
+                      اتصل للاستفسار عن السعر
+                    </p>
+                    <button className="racing-glow-button text-sm px-6 py-2">
+                      تواصل معنا
                     </button>
                   </div>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
+        ))}
+      </div>
+    </div>
+  );
 
-          {/* View All Products Button */}
-          <div className="text-center">
-            <Link to="/products">
-              <Button className="racing-glow-button text-xl px-12 py-4 animate-pulse">
-                استكشف جميع المحاكيات
-              </Button>
-            </Link>
-          </div>
+  return (
+    <section className="py-24 px-6 bg-gradient-to-b from-deep-black via-charcoal to-deep-black">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16 animate-fade-in-up">
+          <h2 className="font-cairo font-bold text-4xl md:text-5xl lg:text-6xl mb-6 text-white">
+            منتجاتنا
+          </h2>
+          <p className="font-cairo text-lg md:text-xl text-muted-grey max-w-3xl mx-auto leading-relaxed">
+            اكتشف مجموعة محاكيات السباق المتطورة من سيباق برو
+          </p>
         </div>
 
-        {/* Quick Accessories Preview */}
-        <div className="mb-16">
-          <h3 className="font-cairo red-text-white-outline text-2xl md:text-3xl text-center mb-8">
-            الإكسسوارات المميزة
-          </h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-8">
-            {quickAccessories.map((accessory, index) => (
-              <div key={index} className="premium-card group flex items-center gap-4">
-                <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
-                  <img 
-                    src={accessory.image}
-                    alt={accessory.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="flex-1">
-                  <h4 className="font-cairo font-bold text-white mb-1">
-                    {accessory.name}
-                  </h4>
-                  <p className="font-cairo text-muted-grey text-sm">
-                    {accessory.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+        {/* Racing Simulators Section */}
+        {renderProductSection(simulators, 'محاكيات السباق', 'text-racing-red')}
 
-          <div className="text-center">
-            <Link to="/products">
-              <Button variant="outline" className="border-2 border-racing-red text-racing-red hover:bg-racing-red hover:text-white px-8 py-3 font-cairo font-semibold">
-                عرض جميع الإكسسوارات
-              </Button>
-            </Link>
-          </div>
-        </div>
+        {/* Racing Seats Section */}
+        {renderProductSection(racingSeats, 'مقاعد السباق', 'text-racing-red')}
 
-        {/* Navigation to Other Pages */}
-        <div className="bg-gradient-to-r from-racing-red/10 to-transparent rounded-2xl p-8 border border-racing-red/30">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Link to="/about" className="premium-card hover:border-racing-red/70 transition-all duration-300 group">
-              <h4 className="font-cairo red-text-white-outline text-xl mb-3 group-hover:text-white">
-                من نحن
-              </h4>
-              <p className="font-cairo text-muted-grey group-hover:text-white transition-colors">
-                تعرف على قصتنا ورؤيتنا في عالم محاكاة السباق
-              </p>
-            </Link>
-            
-            <Link to="/services" className="premium-card hover:border-racing-red/70 transition-all duration-300 group">
-              <h4 className="font-cairo red-text-white-outline text-xl mb-3 group-hover:text-white">
-                خدماتنا
-              </h4>
-              <p className="font-cairo text-muted-grey group-hover:text-white transition-colors">
-                اكتشف الخدمات المتكاملة التي نقدمها لعملائنا
-              </p>
-            </Link>
-          </div>
-        </div>
+        {/* Display Stands Section */}
+        {renderProductSection(displayStands, 'حوامل الشاشات', 'text-racing-red')}
+
+        {/* Accessories Section */}
+        {renderProductSection(accessories, 'الإكسسوارات', 'text-racing-red')}
       </div>
     </section>
   );

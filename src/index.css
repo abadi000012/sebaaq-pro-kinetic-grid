@@ -125,32 +125,4 @@ All colors MUST be HSL.
   .hero-gradient {
     background: radial-gradient(ellipse at center, rgba(0,0,0,0.6) 0%, rgba(10,10,10,0.9) 100%);
   }
-
-  .subtle-text-outline {
-    font-weight: 700;
-    text-shadow: 
-      -0.5px -0.5px 0 rgba(255, 0, 0, 0.3),
-      0.5px -0.5px 0 rgba(255, 0, 0, 0.3),
-      -0.5px 0.5px 0 rgba(255, 0, 0, 0.3),
-      0.5px 0.5px 0 rgba(255, 0, 0, 0.3);
-  }
-
-  .hero-title-outline {
-    font-weight: 900;
-    text-shadow: 
-      -1px -1px 0 rgba(255, 0, 0, 0.4),
-      1px -1px 0 rgba(255, 0, 0, 0.4),
-      -1px 1px 0 rgba(255, 0, 0, 0.4),
-      1px 1px 0 rgba(255, 0, 0, 0.4);
-  }
-
-  .red-text-white-outline {
-    color: white;
-    font-weight: 700;
-    text-shadow: 
-      -0.5px -0.5px 0 rgba(255, 0, 0, 0.4),
-      0.5px -0.5px 0 rgba(255, 0, 0, 0.4),
-      -0.5px 0.5px 0 rgba(255, 0, 0, 0.4),
-      0.5px 0.5px 0 rgba(255, 0, 0, 0.4);
-  }
 }
