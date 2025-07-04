@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ProductSection = () => {
   const simulators = [
@@ -215,97 +216,125 @@ const ProductSection = () => {
     }
   ];
 
-  const renderProductSection = (products, title, titleColor = 'text-white') => (
-    <div className="mb-24">
+  const renderProductSection = (products, title, titleColor = 'text-white', isMain = false) => (
+    <div className={`mb-24 ${isMain ? 'mb-32' : ''}`}>
       <div className="text-center mb-16 animate-fade-in-up">
-        <h3 className={`font-cairo font-bold text-3xl md:text-4xl lg:text-5xl mb-6 ${titleColor}`}>
+        <h3 className={`font-cairo font-bold ${isMain ? 'text-4xl md:text-5xl lg:text-6xl' : 'text-3xl md:text-4xl lg:text-5xl'} mb-6 ${titleColor}`}>
           {title}
         </h3>
       </div>
 
-      <div className="space-y-24">
-        {products.map((product, index) => (
-          <div 
-            key={product.id} 
-            className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center animate-fade-in-up ${
-              index % 2 === 1 ? 'lg:flex-row-reverse' : ''
-            }`}
-            style={{ animationDelay: `${index * 0.2}s` }}
-          >
-            {/* Product Images */}
-            <div className={`space-y-6 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-              <div className="grid grid-cols-2 gap-4">
-                {product.images.slice(0, 4).map((image, imgIndex) => (
-                  <div 
-                    key={imgIndex}
-                    className={`aspect-square rounded-2xl overflow-hidden shadow-2xl border border-light-grey/10 ${
-                      imgIndex === 0 ? 'col-span-2' : ''
-                    }`}
-                  >
-                    <img 
-                      src={image}
-                      alt={`${product.name} - صورة ${imgIndex + 1}`}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Product Details */}
-            <div className={`text-center lg:text-right ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-              <h4 className="font-cairo font-bold text-3xl md:text-4xl mb-6 text-white leading-tight">
-                {product.name}
-              </h4>
-              
-              <p className="font-cairo text-muted-grey text-lg leading-relaxed mb-8">
-                {product.description}
-              </p>
-
-              {/* Features */}
-              <div className="space-y-4 mb-8">
-                <div className="bg-gradient-to-r from-racing-red/20 to-transparent p-4 rounded-lg border border-racing-red/30">
-                  <h5 className="font-cairo font-semibold text-racing-red text-xl mb-2">
-                    المواصفات الرئيسية
-                  </h5>
-                  <ul className="font-cairo text-white space-y-2 text-right">
-                    {product.features.map((feature, featureIndex) => (
-                      <li key={featureIndex}>{feature}</li>
+      {isMain ? (
+        // Featured layout for main simulators
+        <div className="space-y-24">
+          {products.map((product, index) => (
+            <Link 
+              key={product.id}
+              to={`/product/${product.id}`}
+              className="block group"
+            >
+              <div 
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center animate-fade-in-up hover:scale-[1.02] transition-transform duration-300 ${
+                  index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+                }`}
+                style={{ animationDelay: `${index * 0.2}s` }}
+              >
+                {/* Product Images */}
+                <div className={`space-y-6 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                  <div className="grid grid-cols-2 gap-4">
+                    {product.images.slice(0, 4).map((image, imgIndex) => (
+                      <div 
+                        key={imgIndex}
+                        className={`aspect-square rounded-2xl overflow-hidden shadow-2xl border border-light-grey/10 ${
+                          imgIndex === 0 ? 'col-span-2' : ''
+                        }`}
+                      >
+                        <img 
+                          src={image}
+                          alt={`${product.name} - صورة ${imgIndex + 1}`}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
                     ))}
-                  </ul>
-                </div>
-              </div>
-
-              {/* Pricing */}
-              <div className="bg-charcoal/80 backdrop-blur-sm border border-light-grey/20 rounded-xl p-6 mb-8">
-                <div className="flex justify-between items-center">
-                  <div className="text-right">
-                    <h5 className="font-cairo font-bold text-2xl text-white mb-2">
-                      {product.name}
-                    </h5>
-                    <p className="font-cairo text-muted-grey">
-                      الحل الأمثل للمبتدئين والمحترفين
-                    </p>
                   </div>
-                  <div className="text-center">
-                    <p className="font-cairo font-bold text-xl text-racing-red mb-2">
-                      اتصل للاستفسار عن السعر
-                    </p>
-                    <button className="racing-glow-button text-sm px-6 py-2">
-                      تواصل معنا
+                </div>
+
+                {/* Product Details */}
+                <div className={`text-center lg:text-right ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                  <h4 className="font-cairo font-bold text-3xl md:text-4xl mb-6 text-white leading-tight group-hover:text-racing-red transition-colors duration-300">
+                    {product.name}
+                  </h4>
+                  
+                  <p className="font-cairo text-muted-grey text-lg leading-relaxed mb-8">
+                    {product.description}
+                  </p>
+
+                  {/* Features */}
+                  <div className="space-y-4 mb-8">
+                    <div className="bg-gradient-to-r from-racing-red/20 to-transparent p-4 rounded-lg border border-racing-red/30">
+                      <h5 className="font-cairo font-semibold text-racing-red text-xl mb-2">
+                        المواصفات الرئيسية
+                      </h5>
+                      <ul className="font-cairo text-white space-y-2 text-right">
+                        {product.features.map((feature, featureIndex) => (
+                          <li key={featureIndex}>{feature}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div className="bg-charcoal/80 backdrop-blur-sm border border-light-grey/20 rounded-xl p-6">
+                    <button className="racing-glow-button w-full">
+                      عرض التفاصيل
                     </button>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        ))}
-      </div>
+            </Link>
+          ))}
+        </div>
+      ) : (
+        // Grid layout for other categories
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {products.map((product, index) => (
+            <Link 
+              key={product.id}
+              to={`/product/${product.id}`}
+              className="block group"
+            >
+              <div 
+                className="bg-charcoal/80 backdrop-blur-sm border border-light-grey/20 rounded-2xl p-6 hover:border-racing-red/50 transition-all duration-300 hover:scale-[1.02] animate-fade-in-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="aspect-square rounded-xl overflow-hidden mb-6">
+                  <img 
+                    src={product.images[0]}
+                    alt={product.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+                
+                <h4 className="font-cairo font-bold text-xl mb-3 text-white group-hover:text-racing-red transition-colors duration-300">
+                  {product.name}
+                </h4>
+                
+                <p className="font-cairo text-muted-grey text-sm leading-relaxed mb-4 line-clamp-3">
+                  {product.description}
+                </p>
+
+                <button className="w-full bg-racing-red/20 hover:bg-racing-red/30 border border-racing-red/30 text-white px-4 py-2 rounded-lg transition-all duration-300 font-cairo">
+                  عرض التفاصيل
+                </button>
+              </div>
+            </Link>
+          ))}
+        </div>
+      )}
     </div>
   );
 
   return (
-    <section className="py-24 px-6 bg-gradient-to-b from-deep-black via-charcoal to-deep-black">
+    <section id="products" className="py-24 px-6 bg-gradient-to-b from-deep-black via-charcoal to-deep-black">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="font-cairo font-bold text-4xl md:text-5xl lg:text-6xl mb-6 text-white">
@@ -316,8 +345,8 @@ const ProductSection = () => {
           </p>
         </div>
 
-        {/* Racing Simulators Section */}
-        {renderProductSection(simulators, 'محاكيات السباق', 'text-racing-red')}
+        {/* Main Racing Simulators Section */}
+        {renderProductSection(simulators, 'محاكيات السباق', 'text-racing-red', true)}
 
         {/* Racing Seats Section */}
         {renderProductSection(racingSeats, 'مقاعد السباق', 'text-racing-red')}

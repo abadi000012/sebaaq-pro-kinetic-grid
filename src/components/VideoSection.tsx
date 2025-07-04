@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const videos = [
   {
@@ -23,6 +23,36 @@ const videos = [
 ];
 
 const VideoSection = () => {
+  const videoRefs = useRef<(HTMLIFrameElement | null)[]>([]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      videoRefs.current.forEach((iframe, index) => {
+        if (iframe) {
+          const rect = iframe.getBoundingClientRect();
+          const isVisible = rect.top < window.innerHeight * 0.8 && rect.bottom > window.innerHeight * 0.2;
+          
+          if (isVisible) {
+            // Auto-play video when in view
+            const currentSrc = iframe.src;
+            if (!currentSrc.includes('autoplay=1')) {
+              iframe.src = currentSrc.replace('modestbranding=1', 'modestbranding=1&autoplay=1&mute=1');
+            }
+          } else {
+            // Pause video when out of view
+            const currentSrc = iframe.src;
+            if (currentSrc.includes('autoplay=1')) {
+              iframe.src = currentSrc.replace('&autoplay=1&mute=1', '');
+            }
+          }
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <section className="py-24 px-6 bg-gradient-to-b from-charcoal via-deep-black to-charcoal">
       <div className="max-w-7xl mx-auto">
@@ -52,6 +82,7 @@ const VideoSection = () => {
               <div className={`${video.featured || !video.highlighted ? 'lg:col-span-3' : 'lg:col-span-3'} order-2 lg:order-1`}>
                 <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl border border-light-grey/10">
                   <iframe
+                    ref={el => videoRefs.current[index] = el}
                     width="100%"
                     height="100%"
                     src={`https://www.youtube.com/embed/${video.id}?modestbranding=1&rel=0&showinfo=0`}
