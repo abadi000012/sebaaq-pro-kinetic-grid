@@ -57,6 +57,24 @@ const ProductSection = () => {
       name: 'جلنط Dpofirs',
       image: '/lovable-uploads/ee8a1ff1-49ea-459e-8f54-3c7ac41e3af7.png',
       category: 'إكسسوارات'
+    },
+    {
+      id: 'shifter',
+      name: 'ناقل حركة احترافي',
+      image: '/lovable-uploads/42c6104b-66aa-4fba-837c-b1b5fc18c871.png',
+      category: 'إكسسوارات'
+    },
+    {
+      id: 'pedals',
+      name: 'دواسات متطورة',
+      image: '/lovable-uploads/3fb38e34-bc46-4944-ac37-a8431a401860.png',
+      category: 'إكسسوارات'
+    },
+    {
+      id: 'vr-headset',
+      name: 'نظارة الواقع الافتراضي',
+      image: '/lovable-uploads/46c3963d-77ae-4bc3-b544-e73cc00ee8f6.png',
+      category: 'إكسسوارات'
     }
   ];
 
