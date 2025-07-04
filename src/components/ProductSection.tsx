@@ -1,7 +1,8 @@
+
 import React from 'react';
 
 const ProductSection = () => {
-  const products = [
+  const simulators = [
     {
       id: 'a2-pro',
       name: 'محاكاة القيادة A2 Pro',
@@ -53,6 +54,139 @@ const ProductSection = () => {
     }
   ];
 
+  const racingSeats = [
+    {
+      id: 'gttrack',
+      name: 'مقعد محاكاة السباق Next Level Racing GTTrack',
+      description: 'مقعد محاكاة السباق المتطور من Next Level Racing يوفر تجربة قيادة واقعية ومريحة للغاية مع تصميم احترافي يناسب جلسات السباق الطويلة',
+      images: [
+        '/lovable-uploads/27bfe8d3-28d1-4885-a5fc-55961e9c05dc.png',
+        '/lovable-uploads/dd135d17-4bde-4784-bd55-0c0b4dc2bce1.png',
+        '/lovable-uploads/34afe112-261d-41ea-86c5-46cad450fe89.png'
+      ],
+      features: [
+        '• تصميم مريح ومتطور',
+        '• قابل للتعديل بالكامل',
+        '• مواد عالية الجودة',
+        '• متوافق مع جميع أنواع المحاكيات'
+      ]
+    },
+    {
+      id: 'elite-seat',
+      name: 'مقعد ELITE محاكاة السباقات نيكست ليفل ريسينج',
+      description: 'مقعد ELITE المتميز يوفر أقصى مستويات الراحة والأداء لمحبي محاكاة السباق مع تقنيات متقدمة وتصميم أنيق',
+      images: [
+        '/lovable-uploads/157b2ab3-b1f0-4f57-b008-3a05b52e07d4.png',
+        '/lovable-uploads/8b02efed-9ed8-4744-933f-ba7babbf0877.png'
+      ],
+      features: [
+        '• تصميم ELITE متميز',
+        '• راحة فائقة للجلسات الطويلة',
+        '• مواد فاخرة عالية الجودة',
+        '• نظام تعديل متقدم'
+      ]
+    }
+  ];
+
+  const renderProductSection = (products, title, titleColor = 'text-white') => (
+    <div className="mb-24">
+      <div className="text-center mb-16 animate-fade-in-up">
+        <h3 className={`font-cairo font-bold text-3xl md:text-4xl lg:text-5xl mb-6 ${titleColor}`}>
+          {title}
+        </h3>
+      </div>
+
+      <div className="space-y-24">
+        {products.map((product, index) => (
+          <div 
+            key={product.id} 
+            className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center animate-fade-in-up ${
+              index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+            }`}
+            style={{ animationDelay: `${index * 0.2}s` }}
+          >
+            {/* Product Images */}
+            <div className={`space-y-6 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+              <div className="grid grid-cols-2 gap-4">
+                {product.images.slice(0, 4).map((image, imgIndex) => (
+                  <div 
+                    key={imgIndex}
+                    className={`aspect-square rounded-2xl overflow-hidden shadow-2xl border border-light-grey/10 ${
+                      imgIndex === 0 ? 'col-span-2' : ''
+                    }`}
+                  >
+                    <img 
+                      src={image}
+                      alt={`${product.name} - صورة ${imgIndex + 1}`}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Product Details */}
+            <div className={`text-center lg:text-right ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+              <h4 className="font-cairo font-bold text-3xl md:text-4xl mb-6 text-white leading-tight">
+                {product.name}
+              </h4>
+              
+              <p className="font-cairo text-muted-grey text-lg leading-relaxed mb-8">
+                {product.description}
+              </p>
+
+              {/* Features */}
+              <div className="space-y-4 mb-8">
+                <div className="bg-gradient-to-r from-racing-red/20 to-transparent p-4 rounded-lg border border-racing-red/30">
+                  <h5 className="font-cairo font-semibold text-racing-red text-xl mb-2">
+                    المواصفات الرئيسية
+                  </h5>
+                  <ul className="font-cairo text-white space-y-2 text-right">
+                    {product.features.map((feature, featureIndex) => (
+                      <li key={featureIndex}>{feature}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* Pricing */}
+              <div className="bg-charcoal/80 backdrop-blur-sm border border-light-grey/20 rounded-xl p-6 mb-8">
+                <div className="flex justify-between items-center">
+                  <div className="text-right">
+                    <h5 className="font-cairo font-bold text-2xl text-white mb-2">
+                      {product.name}
+                    </h5>
+                    <p className="font-cairo text-muted-grey">
+                      الحل الأمثل للمبتدئين والمحترفين
+                    </p>
+                  </div>
+                  <div className="text-center">
+                    <p className="font-cairo font-bold text-xl text-racing-red mb-2">
+                      اتصل للاستفسار عن السعر
+                    </p>
+                    <button className="racing-glow-button text-sm px-6 py-2">
+                      تواصل معنا
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Call to Action */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-end">
+                <button className="racing-glow-button">
+                  احجز جلسة تجريبية
+                </button>
+                <button className="bg-transparent border-2 border-racing-red text-racing-red px-8 py-4 rounded-lg font-cairo font-bold text-lg transition-all duration-300 hover:bg-racing-red hover:text-white">
+                  تحميل الكتالوج
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+
   return (
     <section className="py-24 px-6 bg-gradient-to-b from-deep-black via-charcoal to-deep-black">
       <div className="max-w-7xl mx-auto">
@@ -65,94 +199,11 @@ const ProductSection = () => {
           </p>
         </div>
 
-        <div className="space-y-24">
-          {products.map((product, index) => (
-            <div 
-              key={product.id} 
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center animate-fade-in-up ${
-                index % 2 === 1 ? 'lg:flex-row-reverse' : ''
-              }`}
-              style={{ animationDelay: `${index * 0.2}s` }}
-            >
-              {/* Product Images */}
-              <div className={`space-y-6 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                <div className="grid grid-cols-2 gap-4">
-                  {product.images.slice(0, 4).map((image, imgIndex) => (
-                    <div 
-                      key={imgIndex}
-                      className={`aspect-square rounded-2xl overflow-hidden shadow-2xl border border-light-grey/10 ${
-                        imgIndex === 0 ? 'col-span-2' : ''
-                      }`}
-                    >
-                      <img 
-                        src={image}
-                        alt={`${product.name} - صورة ${imgIndex + 1}`}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
+        {/* Racing Simulators Section */}
+        {renderProductSection(simulators, 'محاكيات السباق', 'text-racing-red')}
 
-              {/* Product Details */}
-              <div className={`text-center lg:text-right ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                <h3 className="font-cairo font-bold text-3xl md:text-4xl mb-6 text-white leading-tight">
-                  {product.name}
-                </h3>
-                
-                <p className="font-cairo text-muted-grey text-lg leading-relaxed mb-8">
-                  {product.description}
-                </p>
-
-                {/* Features */}
-                <div className="space-y-4 mb-8">
-                  <div className="bg-gradient-to-r from-racing-red/20 to-transparent p-4 rounded-lg border border-racing-red/30">
-                    <h4 className="font-cairo font-semibold text-racing-red text-xl mb-2">
-                      المواصفات الرئيسية
-                    </h4>
-                    <ul className="font-cairo text-white space-y-2 text-right">
-                      {product.features.map((feature, featureIndex) => (
-                        <li key={featureIndex}>{feature}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
-                {/* Pricing */}
-                <div className="bg-charcoal/80 backdrop-blur-sm border border-light-grey/20 rounded-xl p-6 mb-8">
-                  <div className="flex justify-between items-center">
-                    <div className="text-right">
-                      <h4 className="font-cairo font-bold text-2xl text-white mb-2">
-                        {product.name}
-                      </h4>
-                      <p className="font-cairo text-muted-grey">
-                        الحل الأمثل للمبتدئين والمحترفين
-                      </p>
-                    </div>
-                    <div className="text-center">
-                      <p className="font-cairo font-bold text-xl text-racing-red mb-2">
-                        اتصل للاستفسار عن السعر
-                      </p>
-                      <button className="racing-glow-button text-sm px-6 py-2">
-                        تواصل معنا
-                      </button>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Call to Action */}
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-end">
-                  <button className="racing-glow-button">
-                    احجز جلسة تجريبية
-                  </button>
-                  <button className="bg-transparent border-2 border-racing-red text-racing-red px-8 py-4 rounded-lg font-cairo font-bold text-lg transition-all duration-300 hover:bg-racing-red hover:text-white">
-                    تحميل الكتالوج
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        {/* Racing Seats Section */}
+        {renderProductSection(racingSeats, 'مقاعد السباق', 'text-racing-red')}
       </div>
     </section>
   );
