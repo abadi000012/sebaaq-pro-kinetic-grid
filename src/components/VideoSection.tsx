@@ -4,19 +4,19 @@ import React from 'react';
 const videos = [
   {
     id: '_-pAH93xvM8',
-    title: 'Raw Power: Rally Simulation Redefined',
-    description: 'Immerse yourself in the visceral excitement of off-road racing, experiencing every jump and slide.',
+    title: 'القوة الخام: إعادة تعريف محاكاة الرالي',
+    description: 'انغمس في الإثارة الحقيقية لسباق الطرق الوعرة، واختبر كل قفزة وانزلاق.',
     featured: true
   },
   {
     id: '0Pb1po3080g',
-    title: 'Precision in Motion: The Art of Lateral Feedback',
-    description: 'Explore how our motion system precisely articulates, putting you in tune with every shift of weight.'
+    title: 'الدقة في الحركة: فن الاستجابة الجانبية',
+    description: 'اكتشف كيف يتحرك نظام الحركة لدينا بدقة، ويضعك في تناغم مع كل تحول في الوزن.'
   },
   {
     id: 'eu5iUfqZel8',
-    title: 'Tailored for Victory: Ergonomic Adjustability',
-    description: 'See the effortless adjustability designed to optimize your seating position for peak performance and comfort.'
+    title: 'مصمم للنصر: قابلية التعديل المريحة',
+    description: 'شاهد سهولة التعديل المصممة لتحسين وضعية جلوسك لأقصى أداء وراحة.'
   }
 ];
 
@@ -25,11 +25,11 @@ const VideoSection = () => {
     <section className="py-24 px-6 bg-gradient-to-b from-charcoal to-deep-black">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="font-exo font-bold text-4xl md:text-5xl lg:text-6xl mb-6 text-white">
-            Witness The Thrill
+          <h2 className="font-cairo font-bold text-4xl md:text-5xl lg:text-6xl mb-6 text-white">
+            اشهد الإثارة
           </h2>
-          <p className="font-montserrat text-lg md:text-xl text-muted-grey max-w-3xl mx-auto leading-relaxed">
-            Dive deeper into the realism and capabilities of SeBaaq Pro simulators.
+          <p className="font-cairo text-lg md:text-xl text-muted-grey max-w-3xl mx-auto leading-relaxed">
+            انغمس أعمق في الواقعية وإمكانيات محاكيات سيباق برو.
           </p>
         </div>
 
@@ -53,11 +53,11 @@ const VideoSection = () => {
                 />
               </div>
               
-              <h3 className="font-montserrat font-semibold text-xl mb-3 text-white">
+              <h3 className="font-cairo font-semibold text-xl mb-3 text-white">
                 {video.title}
               </h3>
               
-              <p className="font-open-sans text-muted-grey leading-relaxed">
+              <p className="font-cairo text-muted-grey leading-relaxed">
                 {video.description}
               </p>
             </div>

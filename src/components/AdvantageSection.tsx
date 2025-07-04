@@ -5,23 +5,23 @@ import { Zap, Target, Gamepad2, Shield } from 'lucide-react';
 const advantages = [
   {
     icon: Zap,
-    title: 'Hyper-Realistic Motion',
-    description: 'Feel every g-force, every curb, every slip. Our motion platforms redefine immersion, connecting you directly to the asphalt.'
+    title: 'حركة فائقة الواقعية',
+    description: 'اشعر بكل قوة جي، كل حافة، كل انزلاق. منصات الحركة لدينا تعيد تعريف الانغماس، وتربطك مباشرة بالأسفلت.'
   },
   {
     icon: Target,
-    title: 'Uncompromising Precision',
-    description: 'Command every corner with industrial-grade controls: razor-sharp force feedback, linear pedals, and lightning-fast shifters.'
+    title: 'دقة لا تقبل المساومة',
+    description: 'تحكم في كل منعطف بضوابط عالية الجودة: ردود فعل قوية حادة، دواسات خطية، وناقلات سرعة فائقة.'
   },
   {
     icon: Gamepad2,
-    title: 'Universal Compatibility',
-    description: 'Seamless integration with your favorite racing titles on PC, PlayStation, and Xbox. Plug in, play, and dominate.'
+    title: 'توافق شامل',
+    description: 'تكامل سلس مع ألعاب السباق المفضلة لديك على الكمبيوتر وبلايستيشن وإكسبوكس. اربط والعب وهيمن.'
   },
   {
     icon: Shield,
-    title: 'Built for Endurance',
-    description: 'Constructed from aerospace-grade materials, our rigs endure countless laps, ensuring unwavering performance for years.'
+    title: 'مصنوع للتحمل',
+    description: 'مصنوع من مواد بدرجة الطيران، منصاتنا تتحمل آلاف اللفات، مما يضمن الأداء الثابت لسنوات.'
   }
 ];
 
@@ -30,11 +30,11 @@ const AdvantageSection = () => {
     <section className="py-24 px-6 bg-gradient-to-b from-deep-black to-charcoal">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="font-exo font-bold text-4xl md:text-5xl lg:text-6xl mb-6 text-white">
-            The SeBaaq Pro Advantage
+          <h2 className="font-cairo font-bold text-4xl md:text-5xl lg:text-6xl mb-6 text-white">
+            ميزة سيباق برو
           </h2>
-          <p className="font-open-sans text-lg md:text-xl text-muted-grey max-w-3xl mx-auto leading-relaxed">
-            Where Precision Meets Passion. Engineered for excellence. Crafted for the ultimate race experience.
+          <p className="font-cairo text-lg md:text-xl text-muted-grey max-w-3xl mx-auto leading-relaxed">
+            حيث تلتقي الدقة بالشغف. مصمم للتميز. مصنوع لتجربة السباق المثلى.
           </p>
         </div>
 
@@ -55,11 +55,11 @@ const AdvantageSection = () => {
                     />
                   </div>
                   
-                  <h3 className="font-montserrat font-semibold text-xl mb-4 text-white group-hover:text-racing-red transition-colors duration-300">
+                  <h3 className="font-cairo font-semibold text-xl mb-4 text-white group-hover:text-racing-red transition-colors duration-300">
                     {advantage.title}
                   </h3>
                   
-                  <p className="font-open-sans text-muted-grey leading-relaxed">
+                  <p className="font-cairo text-muted-grey leading-relaxed">
                     {advantage.description}
                   </p>
                 </div>

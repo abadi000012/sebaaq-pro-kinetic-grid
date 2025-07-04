@@ -48,24 +48,24 @@ const HeroSection = () => {
       {/* Hero Content */}
       <div className="relative z-20 text-center max-w-6xl mx-auto px-6">
         <div className="animate-fade-in">
-          <h1 className="font-exo font-extrabold text-6xl md:text-8xl lg:text-9xl mb-6 bg-gradient-to-r from-white via-light-grey to-white bg-clip-text text-transparent leading-tight">
-            Unleash Your Inner Champion
+          <h1 className="font-cairo font-extrabold text-6xl md:text-8xl lg:text-9xl mb-6 bg-gradient-to-r from-white via-light-grey to-white bg-clip-text text-transparent leading-tight">
+            اطلق البطل الذي بداخلك
           </h1>
           
-          <h2 className="font-montserrat font-semibold text-xl md:text-2xl lg:text-3xl mb-12 text-light-grey max-w-4xl mx-auto leading-relaxed">
-            Experience Unrivaled Precision. Feel the Future of Racing.
+          <h2 className="font-cairo font-semibold text-xl md:text-2xl lg:text-3xl mb-12 text-light-grey max-w-4xl mx-auto leading-relaxed">
+            اختبر دقة لا مثيل لها. اشعر بمستقبل السباق
           </h2>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Button className="racing-glow-button animate-glow">
-              Discover Simulators
+              اكتشف المحاكيات
             </Button>
             
             <Button 
               variant="outline" 
-              className="border-2 border-white text-white hover:bg-white hover:text-deep-black px-8 py-4 rounded-lg font-montserrat font-semibold text-lg transition-all duration-300"
+              className="border-2 border-white text-white hover:bg-white hover:text-deep-black px-8 py-4 rounded-lg font-cairo font-semibold text-lg transition-all duration-300"
             >
-              Watch the Journey
+              شاهد الرحلة
             </Button>
           </div>
         </div>

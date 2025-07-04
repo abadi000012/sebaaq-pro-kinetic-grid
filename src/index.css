@@ -94,14 +94,19 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-deep-black text-white font-open-sans;
+    @apply bg-deep-black text-white font-cairo;
     overflow-x: hidden;
+    direction: rtl;
+  }
+
+  [dir="rtl"] {
+    text-align: right;
   }
 }
 
 @layer components {
   .racing-glow-button {
-    @apply bg-racing-red text-white px-8 py-4 rounded-lg font-exo font-bold text-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,0,0,0.6)] hover:scale-105;
+    @apply bg-racing-red text-white px-8 py-4 rounded-lg font-cairo font-bold text-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,0,0,0.6)] hover:scale-105;
   }
   
   .premium-card {
