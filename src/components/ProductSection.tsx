@@ -88,6 +88,57 @@ const ProductSection = () => {
     }
   ];
 
+  const displayStands = [
+    {
+      id: 'thermaltake-triple',
+      name: 'حامل شاشات سباق ثلاثي من Thermaltake',
+      description: 'احصل على تجربة سباق غامرة واحترافية مع حامل الشاشات الثلاثي من Thermaltake، المصمم خصيصاً لمحبي محاكاة السباق والألعاب الاحترافية',
+      images: [
+        '/lovable-uploads/0207fd82-32d1-4749-b1ae-52d182ac2990.png',
+        '/lovable-uploads/a1696c55-9b57-46ab-b849-ec634115ebbf.png'
+      ],
+      features: [
+        '• دعم ثلاث شاشات بأحجام متنوعة',
+        '• تصميم قوي ومتين من Thermaltake',
+        '• سهولة التركيب والتعديل',
+        '• مثالي لمحاكاة السباق الاحترافية'
+      ]
+    },
+    {
+      id: 'quad-monitor-stand',
+      name: 'حامل شاشة مستقل رباعي',
+      description: 'دعم أربع شاشات: يدعم حتى 4 شاشات بحجم يتراوح بين 21 إلى 43 بوصة، ليمنحك عرضاً بانورامياً مذهلاً وتجربة غامرة لا مثيل لها',
+      images: [
+        '/lovable-uploads/27b513c9-7cf3-4ace-a721-aae6276e2b5a.png',
+        '/lovable-uploads/605d2f9a-cb32-48b2-bf78-750bb2df2435.png',
+        '/lovable-uploads/ef128616-a7d6-49d7-b06c-638d45cea322.png'
+      ],
+      features: [
+        '• دعم 4 شاشات (21-43 بوصة)',
+        '• عرض بانورامي مذهل',
+        '• تصميم مستقل قوي',
+        '• قابلية تعديل شاملة'
+      ]
+    },
+    {
+      id: 'next-level-triple',
+      name: 'حامل شاشة ثلاثي من Next Level Racing',
+      description: 'ارتقِ بتجربة اللعب والمحاكاة إلى مستوى احترافي مع حامل الشاشات الثلاثية من Next Level Racing، المصمم لتوفير أفضل زوايا المشاهدة',
+      images: [
+        '/lovable-uploads/41ed94f9-93b7-46e0-b9cc-4f4f7948af05.png',
+        '/lovable-uploads/a4fcbc50-690a-4e0b-8ac5-324f4d98b2b1.png',
+        '/lovable-uploads/9c257218-9139-4d76-9952-337df7ded453.png',
+        '/lovable-uploads/32535fa5-b196-4c48-8d63-fada565c5bff.png'
+      ],
+      features: [
+        '• تصميم احترافي من Next Level Racing',
+        '• دعم ثلاث شاشات بزوايا مثالية',
+        '• جودة تصنيع عالية',
+        '• متوافق مع معظم أحجام الشاشات'
+      ]
+    }
+  ];
+
   const renderProductSection = (products, title, titleColor = 'text-white') => (
     <div className="mb-24">
       <div className="text-center mb-16 animate-fade-in-up">
@@ -204,6 +255,9 @@ const ProductSection = () => {
 
         {/* Racing Seats Section */}
         {renderProductSection(racingSeats, 'مقاعد السباق', 'text-racing-red')}
+
+        {/* Display Stands Section */}
+        {renderProductSection(displayStands, 'حوامل الشاشات', 'text-racing-red')}
       </div>
     </section>
   );
