@@ -10,8 +10,10 @@ const videos = [
   },
   {
     id: '0Pb1po3080g',
-    title: 'الدقة في الحركة: فن الاستجابة الجانبية',
-    description: 'اكتشف كيف يتحرك نظام الحركة لدينا بدقة، ويضعك في تناغم مع كل تحول في الوزن.'
+    title: 'الحركة ثلاثية الأبعاد: درجات الحرية الثلاث',
+    description: 'شاهد نظام الحركة المتطور الذي يحاكي جميع حركات السيارة الحقيقية',
+    movements: ['PITCH - الميل الأمامي والخلفي', 'ROLL - الدوران الجانبي', 'YAW - الانحراف اليميني واليساري'],
+    highlighted: true
   },
   {
     id: 'eu5iUfqZel8',
@@ -22,7 +24,7 @@ const videos = [
 
 const VideoSection = () => {
   return (
-    <section className="py-24 px-6 bg-gradient-to-b from-charcoal to-deep-black">
+    <section className="py-24 px-6 bg-gradient-to-b from-charcoal via-deep-black to-charcoal">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="font-cairo font-bold text-4xl md:text-5xl lg:text-6xl mb-6 text-white">
@@ -33,35 +35,89 @@ const VideoSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="space-y-12">
           {videos.map((video, index) => (
             <div
               key={video.id}
-              className={`premium-card animate-fade-in-up ${video.featured ? 'lg:col-span-2 lg:row-span-2' : ''}`}
-              style={{ animationDelay: `${index * 0.3}s` }}
+              className={`animate-fade-in-up ${
+                video.featured 
+                  ? 'grid grid-cols-1 lg:grid-cols-5 gap-8 items-center' 
+                  : video.highlighted
+                  ? 'bg-gradient-to-r from-charcoal/50 to-racing-red/10 rounded-2xl p-8 border border-racing-red/20'
+                  : 'grid grid-cols-1 lg:grid-cols-5 gap-8 items-center'
+              }`}
+              style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <div className="aspect-video mb-6 rounded-lg overflow-hidden bg-black">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src={`https://www.youtube.com/embed/${video.id}?modestbranding=1&rel=0`}
-                  title={video.title}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="rounded-lg"
-                />
+              {/* Video Player */}
+              <div className={`${video.featured || !video.highlighted ? 'lg:col-span-3' : 'lg:col-span-3'} order-2 lg:order-1`}>
+                <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl border border-light-grey/10">
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src={`https://www.youtube.com/embed/${video.id}?modestbranding=1&rel=0&showinfo=0`}
+                    title={video.title}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                  />
+                </div>
               </div>
-              
-              <h3 className="font-cairo font-semibold text-xl mb-3 text-white">
-                {video.title}
-              </h3>
-              
-              <p className="font-cairo text-muted-grey leading-relaxed">
-                {video.description}
-              </p>
+
+              {/* Content */}
+              <div className={`${video.featured || !video.highlighted ? 'lg:col-span-2' : 'lg:col-span-2'} order-1 lg:order-2 text-center lg:text-right`}>
+                <h3 className="font-cairo font-bold text-2xl md:text-3xl mb-4 text-white leading-tight">
+                  {video.title}
+                </h3>
+                
+                <p className="font-cairo text-muted-grey text-lg leading-relaxed mb-6">
+                  {video.description}
+                </p>
+
+                {/* 3-Axis Movement Indicators for highlighted video */}
+                {video.highlighted && video.movements && (
+                  <div className="space-y-3">
+                    <h4 className="font-cairo font-semibold text-racing-red text-xl mb-4">
+                      درجات الحرية الثلاث (3 DOF)
+                    </h4>
+                    {video.movements.map((movement, idx) => (
+                      <div 
+                        key={idx}
+                        className="flex items-center justify-center lg:justify-end gap-3 p-3 bg-racing-red/10 rounded-lg border border-racing-red/20"
+                      >
+                        <span className="font-cairo text-white font-medium">
+                          {movement}
+                        </span>
+                        <div className="w-2 h-2 bg-racing-red rounded-full animate-pulse"></div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {/* Call to action for featured video */}
+                {video.featured && (
+                  <button className="racing-glow-button mt-6">
+                    شاهد المزيد
+                  </button>
+                )}
+              </div>
             </div>
           ))}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="text-center mt-16 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+          <div className="inline-block bg-gradient-to-r from-racing-red/20 to-transparent p-8 rounded-2xl border border-racing-red/30">
+            <h3 className="font-cairo font-bold text-2xl text-white mb-4">
+              جرب الواقعية الكاملة
+            </h3>
+            <p className="font-cairo text-muted-grey mb-6">
+              احجز جلسة تجريبية واكتشف الفرق بنفسك
+            </p>
+            <button className="racing-glow-button">
+              احجز الآن
+            </button>
+          </div>
         </div>
       </div>
     </section>
