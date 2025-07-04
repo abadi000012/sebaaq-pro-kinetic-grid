@@ -17,7 +17,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-deep-black via-charcoal to-deep-black">
+    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-deep-black via-charcoal to-deep-black pt-20">
       {/* YouTube Background Video */}
       <div className="absolute inset-0 w-full h-full">
         <iframe
