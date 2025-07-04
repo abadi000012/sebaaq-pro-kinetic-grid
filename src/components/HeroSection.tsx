@@ -53,23 +53,16 @@ const HeroSection = () => {
             اطلق البطل الذي بداخلك
           </h1>
           
-          <h2 className="font-cairo bold-text-outline text-xl md:text-2xl lg:text-3xl mb-12 text-light-grey max-w-4xl mx-auto leading-relaxed">
+          <h2 className="font-cairo subtle-text-outline text-xl md:text-2xl lg:text-3xl mb-12 text-white max-w-4xl mx-auto leading-relaxed">
             اختبر دقة لا مثيل لها. اشعر بمستقبل السباق
           </h2>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <div className="flex justify-center items-center">
             <Link to="/products">
               <Button className="racing-glow-button animate-glow">
                 اكتشف المحاكيات
               </Button>
             </Link>
-            
-            <Button 
-              variant="outline" 
-              className="border-2 border-white text-white hover:bg-white hover:text-deep-black px-8 py-4 rounded-lg font-cairo font-semibold text-lg transition-all duration-300"
-            >
-              شاهد الرحلة
-            </Button>
           </div>
         </div>
       </div>

@@ -67,14 +67,14 @@ const ProductSection = () => {
           <h2 className="font-cairo hero-title-outline text-4xl md:text-5xl lg:text-6xl mb-6 text-white">
             منتجاتنا المميزة
           </h2>
-          <p className="font-cairo bold-text-outline text-lg md:text-xl text-muted-grey max-w-3xl mx-auto leading-relaxed">
+          <p className="font-cairo subtle-text-outline text-lg md:text-xl text-white max-w-3xl mx-auto leading-relaxed">
             اكتشف مجموعة محاكيات السباق المتطورة من سيباق برو - حيث تلتقي التقنية بالواقعية
           </p>
         </div>
 
         {/* Featured Racing Simulators */}
         <div className="mb-20">
-          <h3 className="font-cairo bold-text-outline text-3xl md:text-4xl text-racing-red text-center mb-12">
+          <h3 className="font-cairo red-text-white-outline text-3xl md:text-4xl text-center mb-12">
             محاكيات السباق الاحترافية
           </h3>
           
@@ -107,7 +107,7 @@ const ProductSection = () => {
 
                 {/* Content */}
                 <div className="space-y-4">
-                  <h4 className={`font-cairo bold-text-outline text-white leading-tight ${
+                  <h4 className={`font-cairo subtle-text-outline text-white leading-tight ${
                     index === 0 ? 'text-2xl md:text-3xl' : 'text-xl md:text-2xl'
                   }`}>
                     {simulator.name}
@@ -153,7 +153,7 @@ const ProductSection = () => {
 
         {/* Quick Accessories Preview */}
         <div className="mb-16">
-          <h3 className="font-cairo bold-text-outline text-2xl md:text-3xl text-racing-red text-center mb-8">
+          <h3 className="font-cairo red-text-white-outline text-2xl md:text-3xl text-center mb-8">
             الإكسسوارات المميزة
           </h3>
           
@@ -192,7 +192,7 @@ const ProductSection = () => {
         <div className="bg-gradient-to-r from-racing-red/10 to-transparent rounded-2xl p-8 border border-racing-red/30">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Link to="/about" className="premium-card hover:border-racing-red/70 transition-all duration-300 group">
-              <h4 className="font-cairo bold-text-outline text-xl text-racing-red mb-3 group-hover:text-white">
+              <h4 className="font-cairo red-text-white-outline text-xl mb-3 group-hover:text-white">
                 من نحن
               </h4>
               <p className="font-cairo text-muted-grey group-hover:text-white transition-colors">
@@ -201,7 +201,7 @@ const ProductSection = () => {
             </Link>
             
             <Link to="/services" className="premium-card hover:border-racing-red/70 transition-all duration-300 group">
-              <h4 className="font-cairo bold-text-outline text-xl text-racing-red mb-3 group-hover:text-white">
+              <h4 className="font-cairo red-text-white-outline text-xl mb-3 group-hover:text-white">
                 خدماتنا
               </h4>
               <p className="font-cairo text-muted-grey group-hover:text-white transition-colors">
