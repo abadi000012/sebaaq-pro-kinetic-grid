@@ -1,12 +1,12 @@
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, MessageCircle } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const ProductDetail = () => {
   const { id } = useParams();
 
-  const allProducts = [
+  const simulators = [
     // Simulators
     {
       id: 'a2-pro',
@@ -59,7 +59,10 @@ const ProductDetail = () => {
         'أعلى مستويات الواقعية',
         'تقنية حركة احترافية'
       ]
-    },
+    }
+  ];
+
+  const racingSeats = [
     // Racing Seats
     {
       id: 'gttrack',
@@ -93,7 +96,10 @@ const ProductDetail = () => {
         'مواد فاخرة عالية الجودة',
         'نظام تعديل متقدم'
       ]
-    },
+    }
+  ];
+
+  const displayStands = [
     // Display Stands
     {
       id: 'thermaltake-triple',
@@ -145,7 +151,10 @@ const ProductDetail = () => {
         'جودة تصنيع عالية',
         'متوافق مع معظم أحجام الشاشات'
       ]
-    },
+    }
+  ];
+
+  const accessories = [
     // Accessories
     {
       id: 'dpofirs-handbrake',
@@ -227,6 +236,7 @@ const ProductDetail = () => {
     }
   ];
 
+  const allProducts = [...simulators, ...racingSeats, ...displayStands, ...accessories];
   const product = allProducts.find(p => p.id === id);
 
   if (!product) {
@@ -234,8 +244,8 @@ const ProductDetail = () => {
       <div className="min-h-screen bg-deep-black text-white font-cairo flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">المنتج غير موجود</h1>
-          <Link to="/" className="racing-glow-button">
-            العودة للرئيسية
+          <Link to="/products" className="text-racing-red hover:underline">
+            العودة للمنتجات
           </Link>
         </div>
       </div>
@@ -245,80 +255,74 @@ const ProductDetail = () => {
   return (
     <div className="min-h-screen bg-deep-black text-white font-cairo">
       <div className="container mx-auto px-6 py-8">
-        {/* Back Button */}
-        <Link to="/" className="inline-flex items-center text-racing-red hover:text-white transition-colors mb-8">
+        <Link to="/products" className="inline-flex items-center text-racing-red hover:text-white transition-colors mb-8">
           <ArrowRight className="ml-2 h-5 w-5" />
-          العودة للرئيسية
+          العودة للمنتجات
         </Link>
 
-        {/* Product Details */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
           {/* Product Images */}
           <div className="space-y-4">
-            <div className={`grid ${product.images.length > 2 ? 'grid-cols-2' : 'grid-cols-1'} gap-4`}>
-              {product.images.map((image, index) => (
-                <div 
-                  key={index}
-                  className={`aspect-square rounded-2xl overflow-hidden shadow-2xl border border-light-grey/10 ${
-                    index === 0 && product.images.length > 2 ? 'col-span-2' : ''
-                  }`}
-                >
-                  <img 
-                    src={image}
-                    alt={`${product.name} - صورة ${index + 1}`}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-              ))}
+            <div className="aspect-square rounded-2xl overflow-hidden bg-charcoal">
+              <img 
+                src={product.images[0]}
+                alt={product.name}
+                className="w-full h-full object-cover"
+              />
             </div>
+            {product.images.length > 1 && (
+              <div className="grid grid-cols-3 gap-4">
+                {product.images.slice(1, 4).map((image, index) => (
+                  <div key={index} className="aspect-square rounded-lg overflow-hidden bg-charcoal">
+                    <img 
+                      src={image}
+                      alt={`${product.name} - ${index + 2}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
 
-          {/* Product Info */}
-          <div className="text-right">
-            <span className="inline-block bg-racing-red/20 text-racing-red px-4 py-2 rounded-full text-sm font-semibold mb-4">
-              {product.category}
-            </span>
-            
-            <h1 className="font-cairo font-bold text-4xl md:text-5xl mb-6 text-white leading-tight">
+          {/* Product Details */}
+          <div className="space-y-6">
+            <h1 className="font-cairo font-bold text-4xl text-white">
               {product.name}
             </h1>
             
-            <p className="font-cairo text-muted-grey text-lg leading-relaxed mb-8">
+            <p className="text-muted-grey text-lg leading-relaxed">
               {product.description}
             </p>
 
             {/* Features */}
-            <div className="bg-gradient-to-r from-racing-red/20 to-transparent p-6 rounded-2xl border border-racing-red/30 mb-8">
-              <h3 className="font-cairo font-semibold text-racing-red text-2xl mb-4">
+            <div className="bg-gradient-to-r from-racing-red/20 to-transparent p-6 rounded-lg border border-racing-red/30">
+              <h3 className="font-cairo font-semibold text-racing-red text-xl mb-4">
                 المواصفات الرئيسية
               </h3>
-              <ul className="font-cairo text-white space-y-3">
+              <ul className="space-y-2 text-white">
                 {product.features.map((feature, index) => (
-                  <li key={index} className="flex items-center justify-end">
-                    <span>{feature}</span>
-                    <span className="w-2 h-2 bg-racing-red rounded-full mr-3 flex-shrink-0"></span>
-                  </li>
+                  <li key={index} className="font-cairo">{feature}</li>
                 ))}
               </ul>
             </div>
 
             {/* Contact Section */}
-            <div className="bg-charcoal/80 backdrop-blur-sm border border-light-grey/20 rounded-2xl p-8">
-              <h3 className="font-cairo font-bold text-2xl text-white mb-4 text-center">
-                تواصل معنا للاستفسار
+            <div className="bg-charcoal/80 backdrop-blur-sm border border-light-grey/20 rounded-xl p-6">
+              <h3 className="font-cairo font-bold text-2xl text-white mb-4">
+                تواصل معنا للحصول على هذا المنتج
               </h3>
-              <p className="font-cairo text-muted-grey text-center mb-6">
-                للحصول على أسعار حصرية ومعلومات إضافية عن هذا المنتج
+              <p className="text-muted-grey mb-6">
+                للاستفسار عن الأسعار والتوفر، تواصل معنا مباشرة
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="racing-glow-button flex-1">
-                  واتساب
-                </button>
-                <button className="bg-racing-red/20 hover:bg-racing-red/30 border border-racing-red/30 text-white px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,0,0,0.3)] flex-1">
-                  اتصال مباشر
-                </button>
-              </div>
+              <Button 
+                className="w-full bg-green-600 hover:bg-green-700 text-white font-cairo flex items-center justify-center gap-2"
+                onClick={() => window.open('https://wa.me/9660594196930', '_blank')}
+              >
+                <MessageCircle className="h-5 w-5" />
+                تواصل عبر الواتساب
+              </Button>
             </div>
           </div>
         </div>

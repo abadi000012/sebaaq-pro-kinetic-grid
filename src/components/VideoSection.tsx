@@ -33,13 +33,11 @@ const VideoSection = () => {
           const isVisible = rect.top < window.innerHeight * 0.8 && rect.bottom > window.innerHeight * 0.2;
           
           if (isVisible) {
-            // Auto-play video when in view
             const currentSrc = iframe.src;
             if (!currentSrc.includes('autoplay=1')) {
               iframe.src = currentSrc.replace('modestbranding=1', 'modestbranding=1&autoplay=1&mute=1');
             }
           } else {
-            // Pause video when out of view
             const currentSrc = iframe.src;
             if (currentSrc.includes('autoplay=1')) {
               iframe.src = currentSrc.replace('&autoplay=1&mute=1', '');
@@ -78,7 +76,6 @@ const VideoSection = () => {
               }`}
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              {/* Video Player */}
               <div className={`${video.featured || !video.highlighted ? 'lg:col-span-3' : 'lg:col-span-3'} order-2 lg:order-1`}>
                 <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl border border-light-grey/10">
                   <iframe
@@ -95,7 +92,6 @@ const VideoSection = () => {
                 </div>
               </div>
 
-              {/* Content */}
               <div className={`${video.featured || !video.highlighted ? 'lg:col-span-2' : 'lg:col-span-2'} order-1 lg:order-2 text-center lg:text-right`}>
                 <h3 className="font-cairo font-bold text-2xl md:text-3xl mb-4 text-white leading-tight">
                   {video.title}
@@ -105,7 +101,6 @@ const VideoSection = () => {
                   {video.description}
                 </p>
 
-                {/* 3-Axis Movement Indicators for highlighted video */}
                 {video.highlighted && video.movements && (
                   <div className="space-y-3">
                     <h4 className="font-cairo font-semibold text-racing-red text-xl mb-4">
@@ -125,7 +120,6 @@ const VideoSection = () => {
                   </div>
                 )}
 
-                {/* Call to action for featured video */}
                 {video.featured && (
                   <button className="racing-glow-button mt-6">
                     شاهد المزيد
@@ -134,21 +128,6 @@ const VideoSection = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="text-center mt-16 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-          <div className="inline-block bg-gradient-to-r from-racing-red/20 to-transparent p-8 rounded-2xl border border-racing-red/30">
-            <h3 className="font-cairo font-bold text-2xl text-white mb-4">
-              جرب الواقعية الكاملة
-            </h3>
-            <p className="font-cairo text-muted-grey mb-6">
-              احجز جلسة تجريبية واكتشف الفرق بنفسك
-            </p>
-            <button className="racing-glow-button">
-              احجز الآن
-            </button>
-          </div>
         </div>
       </div>
     </section>

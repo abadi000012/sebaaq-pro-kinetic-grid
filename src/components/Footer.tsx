@@ -2,12 +2,11 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Youtube, Instagram, Facebook, Twitter } from 'lucide-react';
+import { Youtube, Instagram, Facebook, Twitter, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
   return (
     <footer className="bg-deep-black border-t border-charcoal">
-      {/* CTA Section */}
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
           <h2 className="font-cairo font-bold text-4xl md:text-5xl lg:text-6xl mb-6 text-white">
@@ -17,11 +16,14 @@ const Footer = () => {
             رحلتك إلى محاكاة السباق المثلى تبدأ مع سيباق برو.
           </p>
           
-          <Button className="racing-glow-button mb-12">
-            استكشف مجموعتنا الكاملة
+          <Button 
+            className="racing-glow-button mb-12"
+            onClick={() => window.open('https://wa.me/9660594196930', '_blank')}
+          >
+            <MessageCircle className="ml-2 h-5 w-5" />
+            تواصل معنا عبر الواتساب
           </Button>
 
-          {/* Newsletter Signup */}
           <div className="max-w-2xl mx-auto">
             <h3 className="font-cairo font-semibold text-xl mb-4 text-white">
               انضم إلى مجتمع سيباق برو
@@ -44,51 +46,28 @@ const Footer = () => {
         </div>
       </section>
 
-      {/* Footer Links */}
       <div className="border-t border-charcoal py-12 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <div>
-              <h4 className="font-cairo font-semibold text-white mb-4">المنتجات</h4>
-              <ul className="space-y-2 font-cairo text-muted-grey">
-                <li><a href="#" className="hover:text-racing-red transition-colors">منصات الحركة</a></li>
-                <li><a href="#" className="hover:text-racing-red transition-colors">عجلات السباق</a></li>
-                <li><a href="#" className="hover:text-racing-red transition-colors">أنظمة الدواسات</a></li>
-                <li><a href="#" className="hover:text-racing-red transition-colors">المنصات الكاملة</a></li>
-              </ul>
+              <h4 className="font-cairo font-semibold text-white mb-4">سياسة الاستبدال والإسترجاع</h4>
+              <p className="font-cairo text-muted-grey text-sm leading-relaxed">
+                لمن تطلب أي منتج، سواء كان جاهز أو بتخصيص خاص، يحق للعميل يسترجع قيمة المنتج بس لو المنتج ما اشتغل وما قدرنا احنا وياكم نصلحه ونخليه يشتغل. العميل ما يقدر يسترجع المبلغ لو بس ندم على الشراء. تكاليف الشحن (ذهاب وعودة) تكون على العميل. ولمن يرجع المنتج، مسؤولية تغليفه تكون على العميل.
+              </p>
             </div>
             
             <div>
-              <h4 className="font-cairo font-semibold text-white mb-4">الدعم</h4>
-              <ul className="space-y-2 font-cairo text-muted-grey">
-                <li><a href="#" className="hover:text-racing-red transition-colors">اتصل بالدعم</a></li>
-                <li><a href="#" className="hover:text-racing-red transition-colors">الأسئلة الشائعة</a></li>
-                <li><a href="#" className="hover:text-racing-red transition-colors">الشحن والإرجاع</a></li>
-                <li><a href="#" className="hover:text-racing-red transition-colors">الضمان والرعاية</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="font-cairo font-semibold text-white mb-4">الشركة</h4>
-              <ul className="space-y-2 font-cairo text-muted-grey">
-                <li><a href="#" className="hover:text-racing-red transition-colors">عن سيباق برو</a></li>
-                <li><a href="#" className="hover:text-racing-red transition-colors">الوظائف</a></li>
-                <li><a href="#" className="hover:text-racing-red transition-colors">الصحافة</a></li>
-                <li><a href="#" className="hover:text-racing-red transition-colors">الشركاء</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="font-cairo font-semibold text-white mb-4">القانونية</h4>
-              <ul className="space-y-2 font-cairo text-muted-grey">
-                <li><a href="#" className="hover:text-racing-red transition-colors">سياسة الخصوصية</a></li>
-                <li><a href="#" className="hover:text-racing-red transition-colors">شروط الخدمة</a></li>
-                <li><a href="#" className="hover:text-racing-red transition-colors">سياسة ملفات تعريف الارتباط</a></li>
-              </ul>
+              <h4 className="font-cairo font-semibold text-white mb-4">تواصل معنا</h4>
+              <Button 
+                className="w-full bg-green-600 hover:bg-green-700 text-white font-cairo flex items-center justify-center gap-2"
+                onClick={() => window.open('https://wa.me/9660594196930', '_blank')}
+              >
+                <MessageCircle className="h-5 w-5" />
+                تواصل عبر الواتساب
+              </Button>
             </div>
           </div>
 
-          {/* Social Media & Copyright */}
           <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-charcoal">
             <div className="flex space-x-6 mb-4 md:mb-0">
               <a href="#" className="text-muted-grey hover:text-racing-red transition-colors">
