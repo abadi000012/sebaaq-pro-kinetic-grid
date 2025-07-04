@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const ProductSection = () => {
@@ -8,9 +7,10 @@ const ProductSection = () => {
       name: 'محاكاة القيادة A2 Pro',
       description: 'ابدأ مغامرتك في عالم المحاكاة مع A2 PRO، المنصة الحركية الكاملة التي ترتقي بتجربة المحاكاة إلى مستويات جديدة. تتميز هذه المنصة بمحورين من الحركة: الانحناء الطولي والانحناء الجانبي',
       images: [
-        '/lovable-uploads/6f3ead03-2456-4bbd-b86b-8be60a2aac95.png',
-        '/lovable-uploads/01fa237c-fab2-4b52-857c-27687a795b4a.png',
-        '/lovable-uploads/46c3963d-77ae-4bc3-b544-e73cc00ee8f6.png'
+        '/lovable-uploads/ddaf6303-f564-47a1-a1df-12010f554d24.png',
+        '/lovable-uploads/9cccaa1e-8c23-46fe-a7f1-7eefea6b28a6.png',
+        '/lovable-uploads/3fb38e34-bc46-4944-ac37-a8431a401860.png',
+        '/lovable-uploads/42c6104b-66aa-4fba-837c-b1b5fc18c871.png'
       ],
       features: [
         '• محورين من الحركة (الانحناء الطولي والجانبي)',
@@ -40,10 +40,9 @@ const ProductSection = () => {
       name: 'محاكاة القيادة A6',
       description: 'تجربة محاكاة القيادة المتكامل A6 SEBAAQ ذو ال6 محاور !',
       images: [
-        '/lovable-uploads/ddaf6303-f564-47a1-a1df-12010f554d24.png',
-        '/lovable-uploads/9cccaa1e-8c23-46fe-a7f1-7eefea6b28a6.png',
-        '/lovable-uploads/3fb38e34-bc46-4944-ac37-a8431a401860.png',
-        '/lovable-uploads/42c6104b-66aa-4fba-837c-b1b5fc18c871.png'
+        '/lovable-uploads/6f3ead03-2456-4bbd-b86b-8be60a2aac95.png',
+        '/lovable-uploads/01fa237c-fab2-4b52-857c-27687a795b4a.png',
+        '/lovable-uploads/46c3963d-77ae-4bc3-b544-e73cc00ee8f6.png'
       ],
       features: [
         '• ستة محاور كاملة من الحركة',
