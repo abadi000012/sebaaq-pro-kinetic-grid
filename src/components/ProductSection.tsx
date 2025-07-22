@@ -7,7 +7,7 @@ const ProductSection = () => {
     {
       id: 'a2-pro',
       name: 'محاكاة القيادة A2 Pro',
-      description: 'منصة محاكاة متطورة بمحورين من الحركة توفر تجربة واقعية مع حركات الإمالة الأمامية والخلفية والانحناء الجانبي. تحرك المنصة بأكملها مع المقعد وجميع أدوات التحكم لتشعر بالتسارع والمنعطفات والتوقف بشكل حقيقي.',
+      description: 'محاكي سباق بمحورين حركة للمبتدئين والهواة. يوفر تجربة واقعية مع حركات الإمالة والانحناء.',
       images: [
         '/lovable-uploads/ddaf6303-f564-47a1-a1df-12010f554d24.png',
         '/lovable-uploads/9cccaa1e-8c23-46fe-a7f1-7eefea6b28a6.png',
@@ -24,7 +24,7 @@ const ProductSection = () => {
     {
       id: 'a3',
       name: 'محاكاة القيادة A3',
-      description: 'المنصة الحركية المثالية لمن يبحث عن محاكاة واقعية، حيث توفر ثلاثة محاور من الحركة يعطيك تجربة دقيقة للشعور في محاكاة القيادة، هذه المنصة ليست مجرد جهاز محاكاة عادي—إنها تجربة حقيقية تعكس كل تفاصيل التحكم في السيارة.',
+      description: 'محاكي متوسط المستوى بثلاثة محاور حركة. يوفر تجربة أكثر واقعية للمتحمسين.',
       images: [
         '/lovable-uploads/19893509-3604-4099-b51b-2f1aed6230b1.png',
         '/lovable-uploads/82ffd425-0c66-4075-a310-489bfe8b8cfa.png',
@@ -40,7 +40,7 @@ const ProductSection = () => {
     {
       id: 'a6',
       name: 'محاكاة القيادة A6',
-      description: 'المنصة الحركية الاقوى التي تقدم جميع المحاور الستة للحركة لتجربة لا مثيل لها. هذه المنصة المتطورة والمدمجة قادرة على إعادة جميع الحركات الممكنة في جميع الاتجاهات. من الرفع والدوران والتوجيه إلى الانزلاق الأمامي والتموج الجانبي والحركة الأمامية، A6 هي المنصة المثالية التي تحاكي كل لحظة من المحاكاة بدقة وواقعية. عندما يتعلق الأمر بالأداء، هذه هي القمة—لا شيء آخر يقترب منها. استعد لتجربة غامرة ستجعلك تشعر وكأنك داخل السيارة نفسها!',
+      description: 'أقوى محاكي بستة محاور حركة كاملة. تجربة احترافية متكاملة للمحترفين والأندية.',
       images: [
         '/lovable-uploads/6f3ead03-2456-4bbd-b86b-8be60a2aac95.png',
         '/lovable-uploads/01fa237c-fab2-4b52-857c-27687a795b4a.png',
@@ -59,7 +59,7 @@ const ProductSection = () => {
     {
       id: 'gttrack',
       name: 'مقعد محاكاة السباق Next Level Racing GTTrack',
-      description: 'مقعد محاكاة السباق المتطور من Next Level Racing يوفر تجربة قيادة واقعية ومريحة للغاية مع تصميم احترافي يناسب جلسات السباق الطويلة',
+      description: 'مقعد سباق مريح وقابل للتعديل مناسب لجلسات طويلة.',
       images: [
         '/lovable-uploads/27bfe8d3-28d1-4885-a5fc-55961e9c05dc.png',
         '/lovable-uploads/dd135d17-4bde-4784-bd55-0c0b4dc2bce1.png',
@@ -75,7 +75,7 @@ const ProductSection = () => {
     {
       id: 'elite-seat',
       name: 'مقعد ELITE محاكاة السباقات نيكست ليفل ريسينج',
-      description: 'مقعد ELITE المتميز يوفر أقصى مستويات الراحة والأداء لمحبي محاكاة السباق مع تقنيات متقدمة وتصميم أنيق',
+      description: 'مقعد متميز فاخر بأعلى مستويات الراحة والجودة.',
       images: [
         '/lovable-uploads/157b2ab3-b1f0-4f57-b008-3a05b52e07d4.png',
         '/lovable-uploads/8b02efed-9ed8-4744-933f-ba7babbf0877.png'
@@ -225,8 +225,8 @@ const ProductSection = () => {
       </div>
 
       {isMain ? (
-        // Featured layout for main simulators
-        <div className="space-y-24">
+        // Organized grid layout for main simulators
+        <div className="grid lg:grid-cols-3 gap-8">
           {products.map((product, index) => (
             <Link 
               key={product.id}
@@ -234,60 +234,45 @@ const ProductSection = () => {
               className="block group"
             >
               <div 
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center animate-fade-in-up hover:scale-[1.02] transition-transform duration-300 ${
-                  index % 2 === 1 ? 'lg:flex-row-reverse' : ''
-                }`}
-                style={{ animationDelay: `${index * 0.2}s` }}
+                className="bg-charcoal/80 backdrop-blur-sm border border-light-grey/20 rounded-2xl p-6 hover:border-racing-red/50 transition-all duration-300 hover:scale-[1.02] animate-fade-in-up h-full flex flex-col"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {/* Product Images */}
-                <div className={`space-y-6 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                  <div className="grid grid-cols-2 gap-4">
-                    {product.images.slice(0, 4).map((image, imgIndex) => (
-                      <div 
-                        key={imgIndex}
-                        className={`aspect-square rounded-2xl overflow-hidden shadow-2xl border border-light-grey/10 ${
-                          imgIndex === 0 ? 'col-span-2' : ''
-                        }`}
-                      >
-                        <img 
-                          src={image}
-                          alt={`${product.name} - صورة ${imgIndex + 1}`}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        />
-                      </div>
-                    ))}
-                  </div>
+                {/* Product Image */}
+                <div className="aspect-square rounded-xl overflow-hidden mb-6">
+                  <img 
+                    src={product.images[0]}
+                    alt={product.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
                 </div>
 
                 {/* Product Details */}
-                <div className={`text-center lg:text-right ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                  <h4 className="font-cairo font-bold text-3xl md:text-4xl mb-6 text-white leading-tight group-hover:text-racing-red transition-colors duration-300">
+                <div className="flex-1 flex flex-col">
+                  <h4 className="font-cairo font-bold text-xl mb-3 text-white group-hover:text-racing-red transition-colors duration-300">
                     {product.name}
                   </h4>
                   
-                  <p className="font-cairo text-muted-grey text-lg leading-relaxed mb-8">
+                  <p className="font-cairo text-muted-grey text-sm leading-relaxed mb-4 flex-1">
                     {product.description}
                   </p>
 
                   {/* Features */}
-                  <div className="space-y-4 mb-8">
-                    <div className="bg-gradient-to-r from-racing-red/20 to-transparent p-4 rounded-lg border border-racing-red/30">
-                      <h5 className="font-cairo font-semibold text-racing-red text-xl mb-2">
+                  <div className="mb-4">
+                    <div className="bg-gradient-to-r from-racing-red/20 to-transparent p-3 rounded-lg border border-racing-red/30">
+                      <h5 className="font-cairo font-semibold text-racing-red text-sm mb-2">
                         المواصفات الرئيسية
                       </h5>
-                      <ul className="font-cairo text-white space-y-2 text-right">
-                        {product.features.map((feature, featureIndex) => (
+                      <ul className="font-cairo text-white space-y-1 text-right text-xs">
+                        {product.features.slice(0, 3).map((feature, featureIndex) => (
                           <li key={featureIndex}>{feature}</li>
                         ))}
                       </ul>
                     </div>
                   </div>
 
-                  <div className="bg-charcoal/80 backdrop-blur-sm border border-light-grey/20 rounded-xl p-6">
-                    <button className="racing-glow-button w-full">
-                      عرض التفاصيل
-                    </button>
-                  </div>
+                  <button className="w-full bg-racing-red/20 hover:bg-racing-red/30 border border-racing-red/30 text-white px-4 py-2 rounded-lg transition-all duration-300 font-cairo">
+                    عرض التفاصيل
+                  </button>
                 </div>
               </div>
             </Link>
