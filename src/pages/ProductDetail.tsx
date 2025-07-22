@@ -297,16 +297,45 @@ const ProductDetail = () => {
               {product.description}
             </div>
 
-            {/* Features */}
-            <div className="bg-gradient-to-r from-racing-red/20 to-transparent p-6 rounded-lg border border-racing-red/30">
-              <h3 className="font-cairo font-semibold text-racing-red text-xl mb-4">
-                المواصفات الرئيسية
-              </h3>
-              <ul className="space-y-2 text-white">
-                {product.features.map((feature, index) => (
-                  <li key={index} className="font-cairo">{feature}</li>
-                ))}
-              </ul>
+            {/* Features and Movement Diagrams */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-gradient-to-r from-racing-red/20 to-transparent p-6 rounded-lg border border-racing-red/30">
+                <h3 className="font-cairo font-semibold text-racing-red text-xl mb-4">
+                  المواصفات الرئيسية
+                </h3>
+                <ul className="space-y-2 text-white">
+                  {product.features.map((feature, index) => (
+                    <li key={index} className="font-cairo">{feature}</li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Movement Diagrams for A2 Pro */}
+              {product.id === 'a2-pro' && (
+                <div className="bg-charcoal/80 backdrop-blur-sm border border-light-grey/20 rounded-lg p-6">
+                  <h3 className="font-cairo font-semibold text-white text-xl mb-4">
+                    حركات المنصة
+                  </h3>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="text-center">
+                      <img 
+                        src="/lovable-uploads/740dd7cb-6818-4f2a-9f44-8451242167ca.png" 
+                        alt="الانحناء الطولي" 
+                        className="w-full h-20 object-contain mb-2"
+                      />
+                      <p className="text-sm text-muted-grey">الانحناء الطولي</p>
+                    </div>
+                    <div className="text-center">
+                      <img 
+                        src="/lovable-uploads/c348db62-f7e5-49f1-b8c2-fb8ff74ff874.png" 
+                        alt="الانحناء الجانبي" 
+                        className="w-full h-20 object-contain mb-2"
+                      />
+                      <p className="text-sm text-muted-grey">الانحناء الجانبي</p>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Contact Section */}
