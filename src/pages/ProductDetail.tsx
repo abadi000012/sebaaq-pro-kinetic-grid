@@ -17,7 +17,9 @@ const ProductDetail = () => {
         '/lovable-uploads/ddaf6303-f564-47a1-a1df-12010f554d24.png',
         '/lovable-uploads/9cccaa1e-8c23-46fe-a7f1-7eefea6b28a6.png',
         '/lovable-uploads/3fb38e34-bc46-4944-ac37-a8431a401860.png',
-        '/lovable-uploads/42c6104b-66aa-4fba-837c-b1b5fc18c871.png'
+        '/lovable-uploads/42c6104b-66aa-4fba-837c-b1b5fc18c871.png',
+        '/lovable-uploads/740dd7cb-6818-4f2a-9f44-8451242167ca.png',
+        '/lovable-uploads/c348db62-f7e5-49f1-b8c2-fb8ff74ff874.png'
       ],
       features: [
         'محورين من الحركة (الانحناء الطولي والجانبي)',
