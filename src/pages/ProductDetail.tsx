@@ -310,7 +310,64 @@ const ProductDetail = () => {
                 </ul>
               </div>
 
-              {/* Movement Diagrams for A6 only */}
+              {/* Movement Diagrams for A2 Pro */}
+              {product.id === 'a2-pro' && (
+                <div className="bg-charcoal/80 backdrop-blur-sm border border-light-grey/20 rounded-lg p-6">
+                  <h3 className="font-cairo font-semibold text-white text-xl mb-4">
+                    حركات المنصة
+                  </h3>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="text-center">
+                      <img 
+                        src="/lovable-uploads/740dd7cb-6818-4f2a-9f44-8451242167ca.png" 
+                        alt="الانحناء الطولي" 
+                        className="w-full h-40 object-contain"
+                      />
+                    </div>
+                    <div className="text-center">
+                      <img 
+                        src="/lovable-uploads/c348db62-f7e5-49f1-b8c2-fb8ff74ff874.png" 
+                        alt="الانحناء الجانبي" 
+                        className="w-full h-40 object-contain"
+                      />
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Movement Diagrams for A3 */}
+              {product.id === 'a3' && (
+                <div className="bg-charcoal/80 backdrop-blur-sm border border-light-grey/20 rounded-lg p-6">
+                  <h3 className="font-cairo font-semibold text-white text-xl mb-4">
+                    حركات المنصة
+                  </h3>
+                  <div className="grid grid-cols-3 gap-4">
+                    <div className="text-center">
+                      <img 
+                        src="/lovable-uploads/c7e49e96-2ef2-4071-a550-f750392e2bf6.png" 
+                        alt="الانحناء الطولي" 
+                        className="w-full h-40 object-contain"
+                      />
+                    </div>
+                    <div className="text-center">
+                      <img 
+                        src="/lovable-uploads/1e3d78ca-33ad-4107-a1ee-99ac1c626474.png" 
+                        alt="الانحناء الجانبي" 
+                        className="w-full h-40 object-contain"
+                      />
+                    </div>
+                    <div className="text-center">
+                      <img 
+                        src="/lovable-uploads/fc18d3c2-9927-486e-a786-951503ba28a3.png" 
+                        alt="الدوران" 
+                        className="w-full h-40 object-contain"
+                      />
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Movement Diagrams for A6 */}
               {product.id === 'a6' && (
                 <div className="bg-charcoal/80 backdrop-blur-sm border border-light-grey/20 rounded-lg p-6">
                   <h3 className="font-cairo font-semibold text-white text-xl mb-4">
@@ -321,21 +378,42 @@ const ProductDetail = () => {
                       <img 
                         src="/lovable-uploads/af544b39-1a17-4eeb-bc7e-3b86f72edaa1.png" 
                         alt="حركة عمودية" 
-                        className="w-full h-32 object-contain"
+                        className="w-full h-40 object-contain"
                       />
                     </div>
                     <div className="text-center">
                       <img 
                         src="/lovable-uploads/4babd8b1-2eef-4adb-8560-fd4b455e86da.png" 
                         alt="حركة جانبية" 
-                        className="w-full h-32 object-contain"
+                        className="w-full h-40 object-contain"
                       />
                     </div>
                     <div className="text-center">
                       <img 
                         src="/lovable-uploads/6db9751c-edd9-4edf-9cb5-30724cfde36d.png" 
                         alt="حركة جانبية مفصلة" 
-                        className="w-full h-32 object-contain"
+                        className="w-full h-40 object-contain"
+                      />
+                    </div>
+                    <div className="text-center">
+                      <img 
+                        src="/lovable-uploads/c7e49e96-2ef2-4071-a550-f750392e2bf6.png" 
+                        alt="حركة إضافية 1" 
+                        className="w-full h-40 object-contain"
+                      />
+                    </div>
+                    <div className="text-center">
+                      <img 
+                        src="/lovable-uploads/1e3d78ca-33ad-4107-a1ee-99ac1c626474.png" 
+                        alt="حركة إضافية 2" 
+                        className="w-full h-40 object-contain"
+                      />
+                    </div>
+                    <div className="text-center">
+                      <img 
+                        src="/lovable-uploads/fc18d3c2-9927-486e-a786-951503ba28a3.png" 
+                        alt="حركة إضافية 3" 
+                        className="w-full h-40 object-contain"
                       />
                     </div>
                   </div>
