@@ -1,10 +1,8 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useLanguage } from '@/contexts/LanguageContext';
 
 const ProductSection = () => {
-  const { language } = useLanguage();
   const simulators = [
     {
       id: 'a2-pro',
@@ -262,7 +260,7 @@ const ProductSection = () => {
                   <div className="mb-4">
                     <div className="bg-gradient-to-r from-racing-red/20 to-transparent p-3 rounded-lg border border-racing-red/30">
                       <h5 className="font-cairo font-semibold text-racing-red text-sm mb-2">
-                        {language === 'ar' ? 'المواصفات الرئيسية' : 'Key Features'}
+                        المواصفات الرئيسية
                       </h5>
                       <ul className="font-cairo text-white space-y-1 text-right text-xs">
                         {product.features.slice(0, 3).map((feature, featureIndex) => (
@@ -273,7 +271,7 @@ const ProductSection = () => {
                   </div>
 
                   <button className="w-full bg-racing-red/20 hover:bg-racing-red/30 border border-racing-red/30 text-white px-4 py-2 rounded-lg transition-all duration-300 font-cairo">
-                    {language === 'ar' ? 'عرض التفاصيل' : 'View Details'}
+                    عرض التفاصيل
                   </button>
                 </div>
               </div>
@@ -310,7 +308,7 @@ const ProductSection = () => {
                 </p>
 
                 <button className="w-full bg-racing-red/20 hover:bg-racing-red/30 border border-racing-red/30 text-white px-4 py-2 rounded-lg transition-all duration-300 font-cairo">
-                  {language === 'ar' ? 'عرض التفاصيل' : 'View Details'}
+                  عرض التفاصيل
                 </button>
               </div>
             </Link>
@@ -325,24 +323,24 @@ const ProductSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="font-cairo font-bold text-4xl md:text-5xl lg:text-6xl mb-6 text-white">
-            {language === 'ar' ? 'منتجاتنا' : 'Our Products'}
+            منتجاتنا
           </h2>
           <p className="font-cairo text-lg md:text-xl text-muted-grey max-w-3xl mx-auto leading-relaxed">
-            {language === 'ar' ? 'اكتشف مجموعة محاكيات السباق المتطورة من سيباق برو' : 'Discover SeBaaq Pro\'s advanced racing simulator collection'}
+            اكتشف مجموعة محاكيات السباق المتطورة من سيباق برو
           </p>
         </div>
 
         {/* Main Racing Simulators Section */}
-        {renderProductSection(simulators, language === 'ar' ? 'محاكيات السباق' : 'Racing Simulators', 'text-racing-red', true)}
+        {renderProductSection(simulators, 'محاكيات السباق', 'text-racing-red', true)}
 
         {/* Racing Seats Section */}
-        {renderProductSection(racingSeats, language === 'ar' ? 'مقاعد السباق' : 'Racing Seats', 'text-racing-red')}
+        {renderProductSection(racingSeats, 'مقاعد السباق', 'text-racing-red')}
 
         {/* Display Stands Section */}
-        {renderProductSection(displayStands, language === 'ar' ? 'حوامل الشاشات' : 'Display Stands', 'text-racing-red')}
+        {renderProductSection(displayStands, 'حوامل الشاشات', 'text-racing-red')}
 
         {/* Accessories Section */}
-        {renderProductSection(accessories, language === 'ar' ? 'الإكسسوارات' : 'Accessories', 'text-racing-red')}
+        {renderProductSection(accessories, 'الإكسسوارات', 'text-racing-red')}
       </div>
     </section>
   );

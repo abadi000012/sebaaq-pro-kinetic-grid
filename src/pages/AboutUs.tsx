@@ -3,33 +3,29 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Target, Users, Award, Zap } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
 
 const AboutUs = () => {
-  const { language } = useLanguage();
   return (
     <div className="min-h-screen bg-deep-black text-white font-cairo">
       {/* Header */}
       <div className="container mx-auto px-6 py-12">
         <Link to="/" className="inline-flex items-center text-racing-red hover:text-white transition-colors mb-8">
           <ArrowRight className="ml-2 h-5 w-5" />
-          {language === 'ar' ? 'العودة للرئيسية' : 'Back to Home'}
+          العودة للرئيسية
         </Link>
 
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="font-cairo font-extrabold text-5xl md:text-7xl mb-6 bg-gradient-to-r from-white via-light-grey to-white bg-clip-text text-transparent">
-            {language === 'ar' ? 'من نحن' : 'About Us'}
+            من نحن
           </h1>
           <div className="max-w-4xl mx-auto">
             <h2 className="font-cairo font-bold text-2xl md:text-3xl text-racing-red mb-6">
-              {language === 'ar' ? 'مرحباً بكم في سباق برو!' : 'Welcome to SeBaaq Pro!'}
+              مرحباً بكم في سباق برو!
             </h2>
             <p className="text-lg md:text-xl text-light-grey leading-relaxed">
-              {language === 'ar' 
-                ? 'احنا في "سباق برو" شغفنا نوصل لكم أحدث وأقوى تجارب الواقع الافتراضي، خصوصاً مع منتجات المحاكاة الرهيبة. ندري إنكم تدورون على شي يغير مفهوم اللعب والترفيه، وعشان كذا جبنالكم هذي المنتجات المتطورة مباشرة لبيوتكم في السعودية، وبكل سهولة وراحة.'
-                : 'At SeBaaq Pro, our passion is to bring you the latest and most powerful virtual reality experiences, especially with amazing simulation products. We know you\'re looking for something that will change your concept of gaming and entertainment, which is why we bring these advanced products directly to your homes in Saudi Arabia, with complete ease and comfort.'
-              }
+              احنا في "سباق برو" شغفنا نوصل لكم أحدث وأقوى تجارب الواقع الافتراضي، خصوصاً مع منتجات المحاكاة الرهيبة. 
+              ندري إنكم تدورون على شي يغير مفهوم اللعب والترفيه، وعشان كذا جبنالكم هذي المنتجات المتطورة مباشرة لبيوتكم في السعودية، وبكل سهولة وراحة.
             </p>
           </div>
         </div>
@@ -37,13 +33,10 @@ const AboutUs = () => {
         {/* What We Offer */}
         <div className="mb-16">
           <h2 className="font-cairo font-bold text-3xl md:text-4xl text-center mb-12 text-racing-red">
-            {language === 'ar' ? 'إيش نقدم؟' : 'What Do We Offer?'}
+            إيش نقدم؟
           </h2>
           <p className="text-center text-light-grey text-lg mb-8 max-w-3xl mx-auto">
-            {language === 'ar' 
-              ? 'في "سباق برو"، تخصصنا في توفير منتجات المحاكاة اللي تخليكم تعيشون التجربة كأنها حقيقة. نقدم لكم:'
-              : 'At SeBaaq Pro, we specialize in providing simulation products that make you live the experience as if it were real. We offer you:'
-            }
+            في "سباق برو"، تخصصنا في توفير منتجات المحاكاة اللي تخليكم تعيشون التجربة كأنها حقيقة. نقدم لكم:
           </p>
           
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -53,8 +46,8 @@ const AboutUs = () => {
                   <Target className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-xl mb-3 text-white">{language === 'ar' ? 'أجهزة المحاكاة الأصلية' : 'Original Simulation Devices'}</h3>
-                  <p className="text-light-grey">{language === 'ar' ? 'نوفر لكم أحدث موديلات أجهزة المحاكاة، اللي تضمن لكم أعلى مستويات الواقعية في القيادة والطيران وغيرها.' : 'We provide you with the latest simulation device models, which guarantee you the highest levels of realism in driving, flying, and more.'}</p>
+                  <h3 className="font-bold text-xl mb-3 text-white">أجهزة المحاكاة الأصلية</h3>
+                  <p className="text-light-grey">نوفر لكم أحدث موديلات أجهزة المحاكاة، اللي تضمن لكم أعلى مستويات الواقعية في القيادة والطيران وغيرها.</p>
                 </div>
               </div>
             </div>
@@ -195,7 +188,7 @@ const AboutUs = () => {
         <div className="text-center">
           <Link to="/products">
             <Button className="racing-glow-button text-lg px-12 py-4">
-              {language === 'ar' ? 'استكشف منتجاتنا' : 'Explore Our Products'}
+              استكشف منتجاتنا
             </Button>
           </Link>
         </div>

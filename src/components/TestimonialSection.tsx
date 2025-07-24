@@ -2,29 +2,26 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useLanguage } from '@/contexts/LanguageContext';
 
-const getTestimonials = (language) => [
+const testimonials = [
   {
-    text: language === 'ar' ? "انخفضت أوقات لفاتي فوراً. الانغماس من سيباق برو لا مثيل له ببساطة. لعبة حقيقية تغير قواعد اللعبة لمحاكيات السباق الجدية." : "My lap times improved instantly. The immersion from SeBaaq Pro is simply unmatched. A real game-changer for serious racing simulation.",
-    author: language === 'ar' ? "أ. خان" : "A. Khan",
-    role: language === 'ar' ? "متسابق محاكاة محترف" : "Professional Sim Racer"
+    text: "انخفضت أوقات لفاتي فوراً. الانغماس من سيباق برو لا مثيل له ببساطة. لعبة حقيقية تغير قواعد اللعبة لمحاكيات السباق الجدية.",
+    author: "أ. خان",
+    role: "متسابق محاكاة محترف"
   },
   {
-    text: language === 'ar' ? "جودة البناء رائعة، ومنصة الحركة سلسة. هذا ليس مجرد محاكي؛ إنه بُعد جديد للسباق." : "The build quality is amazing, and the motion platform is so smooth. This isn't just a simulator; it's a new dimension of racing.",
-    author: language === 'ar' ? "م. لي" : "M. Lee",
-    role: language === 'ar' ? "متحمس مخصص" : "Dedicated Enthusiast"
+    text: "جودة البناء رائعة، ومنصة الحركة سلسة. هذا ليس مجرد محاكي؛ إنه بُعد جديد للسباق.",
+    author: "م. لي",
+    role: "متحمس مخصص"
   },
   {
-    text: language === 'ar' ? "التركيب كان واضحاً، والأداء أذهلني. سيباق برو قدم أكثر من كل توقعاتي. أنصح به بشدة!" : "Setup was straightforward, and the performance blew me away. SeBaaq Pro delivered beyond all expectations. Highly recommend!",
-    author: language === 'ar' ? "ج. سميث" : "J. Smith",
-    role: language === 'ar' ? "مشجع سباق الواقع الافتراضي" : "VR Racing Fan"
+    text: "التركيب كان واضحاً، والأداء أذهلني. سيباق برو قدم أكثر من كل توقعاتي. أنصح به بشدة!",
+    author: "ج. سميث",
+    role: "مشجع سباق الواقع الافتراضي"
   }
 ];
 
 const TestimonialSection = () => {
-  const { language } = useLanguage();
-  const testimonials = getTestimonials(language);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -48,10 +45,10 @@ const TestimonialSection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="font-cairo font-bold text-4xl md:text-5xl lg:text-6xl mb-6 text-white">
-            {language === 'ar' ? 'اسمع زئير الرضا' : 'Hear the Roar of Satisfaction'}
+            اسمع زئير الرضا
           </h2>
           <p className="font-cairo text-lg md:text-xl text-muted-grey leading-relaxed">
-            {language === 'ar' ? 'متسابقون حقيقيون. تقييمات حقيقية. تجارب لا مثيل لها.' : 'Real racers. Real reviews. Unmatched experiences.'}
+            متسابقون حقيقيون. تقييمات حقيقية. تجارب لا مثيل لها.
           </p>
         </div>
 
