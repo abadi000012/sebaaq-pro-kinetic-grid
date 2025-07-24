@@ -2,8 +2,10 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const HeroSection = () => {
+  const { language } = useLanguage();
   const [particles, setParticles] = useState<Array<{ id: number; left: number; delay: number }>>([]);
 
   useEffect(() => {
@@ -50,17 +52,17 @@ const HeroSection = () => {
       <div className="relative z-20 text-center max-w-6xl mx-auto px-6">
         <div className="animate-fade-in">
           <h1 className="font-cairo font-black text-6xl md:text-8xl lg:text-9xl mb-6 text-white hero-text-outline leading-tight">
-            اطلق البطل الذي بداخلك
+            {language === 'ar' ? 'هذا مو جهاز... هذا عالم سباق كامل!' : 'This is not just a device... This is a complete racing world!'}
           </h1>
           
           <h2 className="font-cairo font-bold text-xl md:text-2xl lg:text-3xl mb-12 text-light-grey hero-text-outline max-w-4xl mx-auto leading-relaxed">
-            اختبر دقة لا مثيل لها. اشعر بمستقبل السباق
+            {language === 'ar' ? 'اختبر دقة لا مثيل لها. اشعر بمستقبل السباق' : 'Experience unparalleled precision. Feel the future of racing'}
           </h2>
 
           <div className="flex justify-center">
             <Link to="/products">
               <Button className="racing-glow-button animate-glow text-xl px-12 py-6">
-                اكتشف المحاكيات
+                {language === 'ar' ? 'اكتشف المحاكيات' : 'Discover Simulators'}
               </Button>
             </Link>
           </div>
