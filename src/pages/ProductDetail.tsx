@@ -2,9 +2,11 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowRight, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const ProductDetail = () => {
   const { id } = useParams();
+  const { language } = useLanguage();
 
   const simulators = [
     // Simulators
@@ -245,9 +247,9 @@ const ProductDetail = () => {
     return (
       <div className="min-h-screen bg-deep-black text-white font-cairo flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">المنتج غير موجود</h1>
+          <h1 className="text-4xl font-bold mb-4">{language === 'ar' ? 'المنتج غير موجود' : 'Product Not Found'}</h1>
           <Link to="/products" className="text-racing-red hover:underline">
-            العودة للمنتجات
+            {language === 'ar' ? 'العودة للمنتجات' : 'Back to Products'}
           </Link>
         </div>
       </div>
@@ -259,7 +261,7 @@ const ProductDetail = () => {
       <div className="container mx-auto px-6 py-8">
         <Link to="/products" className="inline-flex items-center text-racing-red hover:text-white transition-colors mb-8">
           <ArrowRight className="ml-2 h-5 w-5" />
-          العودة للمنتجات
+          {language === 'ar' ? 'العودة للمنتجات' : 'Back to Products'}
         </Link>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
@@ -301,7 +303,7 @@ const ProductDetail = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-gradient-to-r from-racing-red/20 to-transparent p-6 rounded-lg border border-racing-red/30">
                 <h3 className="font-cairo font-semibold text-racing-red text-xl mb-4">
-                  المواصفات الرئيسية
+                  {language === 'ar' ? 'المواصفات الرئيسية' : 'Key Features'}
                 </h3>
                 <ul className="space-y-2 text-white">
                   {product.features.map((feature, index) => (
@@ -314,7 +316,7 @@ const ProductDetail = () => {
               {product.id === 'a2-pro' && (
                 <div className="bg-charcoal/80 backdrop-blur-sm border border-light-grey/20 rounded-lg p-6">
                   <h3 className="font-cairo font-semibold text-white text-xl mb-4">
-                    حركات المنصة
+                    {language === 'ar' ? 'حركات المنصة' : 'Platform Movement'}
                   </h3>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="text-center">

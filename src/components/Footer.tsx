@@ -2,17 +2,19 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Youtube, Instagram, MessageCircle } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer = () => {
+  const { language } = useLanguage();
   return (
     <footer className="bg-deep-black border-t border-charcoal">
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
           <h2 className="font-cairo font-bold text-4xl md:text-5xl lg:text-6xl mb-6 text-white">
-            مستعد للهيمنة على الأسفلت الرقمي؟
+            {language === 'ar' ? 'مستعد للهيمنة على الأسفلت الرقمي؟' : 'Ready to Dominate the Digital Asphalt?'}
           </h2>
           <p className="font-cairo font-light text-lg md:text-xl text-white mb-10 leading-relaxed">
-            رحلتك إلى محاكاة السباق المثلى تبدأ مع سيباق برو.
+            {language === 'ar' ? 'رحلتك إلى محاكاة السباق المثلى تبدأ مع سيباق برو.' : 'Your journey to ultimate racing simulation starts with SeBaaq Pro.'}
           </p>
           
           <Button 
@@ -20,25 +22,25 @@ const Footer = () => {
             onClick={() => window.open('https://wa.me/9660594196930', '_blank')}
           >
             <MessageCircle className="ml-2 h-5 w-5" />
-            تواصل معنا عبر الواتساب
+            {language === 'ar' ? 'تواصل معنا عبر الواتساب' : 'Contact us via WhatsApp'}
           </Button>
 
           <div className="max-w-2xl mx-auto">
             <h3 className="font-cairo font-semibold text-xl mb-4 text-white">
-              انضم إلى مجتمع سيباق برو
+              {language === 'ar' ? 'انضم إلى مجتمع سيباق برو' : 'Join the SeBaaq Pro Community'}
             </h3>
             <p className="font-cairo text-muted-grey mb-6">
-              احصل على رؤى حصرية وإعلانات المنتجات الجديدة ونصائح احترافية مباشرة.
+              {language === 'ar' ? 'احصل على رؤى حصرية وإعلانات المنتجات الجديدة ونصائح احترافية مباشرة.' : 'Get exclusive insights, new product announcements, and pro tips straight to your inbox.'}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
               <Input
                 type="email"
-                placeholder="أدخل بريدك الإلكتروني"
+                placeholder={language === 'ar' ? "أدخل بريدك الإلكتروني" : "Enter your email"}
                 className="flex-1 bg-charcoal border-light-grey/30 text-white placeholder:text-muted-grey focus:border-racing-red"
               />
               <Button className="racing-glow-button">
-                اشترك
+                {language === 'ar' ? 'اشترك' : 'Subscribe'}
               </Button>
             </div>
           </div>
@@ -49,20 +51,20 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <div>
-              <h4 className="font-cairo font-semibold text-white mb-4">سياسة الاستبدال والإسترجاع</h4>
+              <h4 className="font-cairo font-semibold text-white mb-4">{language === 'ar' ? 'سياسة الاستبدال والإسترجاع' : 'Return & Exchange Policy'}</h4>
               <p className="font-cairo text-muted-grey text-sm leading-relaxed">
-                لمن تطلب أي منتج، سواء كان جاهز أو بتخصيص خاص، يحق للعميل يسترجع قيمة المنتج بس لو المنتج ما اشتغل وما قدرنا احنا وياكم نصلحه ونخليه يشتغل. العميل ما يقدر يسترجع المبلغ لو بس ندم على الشراء. تكاليف الشحن (ذهاب وعودة) تكون على العميل. ولمن يرجع المنتج، مسؤولية تغليفه تكون على العميل.
+                {language === 'ar' ? 'لمن تطلب أي منتج، سواء كان جاهز أو بتخصيص خاص، يحق للعميل يسترجع قيمة المنتج بس لو المنتج ما اشتغل وما قدرنا احنا وياكم نصلحه ونخليه يشتغل. العميل ما يقدر يسترجع المبلغ لو بس ندم على الشراء. تكاليف الشحن (ذهاب وعودة) تكون على العميل. ولمن يرجع المنتج، مسؤولية تغليفه تكون على العميل.' : 'For any product ordered, whether ready-made or custom, customers are entitled to a refund only if the product doesn\'t work and we can\'t fix it together. Customers cannot get a refund if they simply regret the purchase. Shipping costs (both ways) are the customer\'s responsibility. When returning a product, packaging is the customer\'s responsibility.'}
               </p>
             </div>
             
             <div>
-              <h4 className="font-cairo font-semibold text-white mb-4">تواصل معنا</h4>
+              <h4 className="font-cairo font-semibold text-white mb-4">{language === 'ar' ? 'تواصل معنا' : 'Contact Us'}</h4>
               <Button 
                 className="w-full bg-green-600 hover:bg-green-700 text-white font-cairo flex items-center justify-center gap-2"
                 onClick={() => window.open('https://wa.me/9660594196930', '_blank')}
               >
                 <MessageCircle className="h-5 w-5" />
-                تواصل عبر الواتساب
+                {language === 'ar' ? 'تواصل عبر الواتساب' : 'Contact via WhatsApp'}
               </Button>
             </div>
           </div>
@@ -98,7 +100,7 @@ const Footer = () => {
             </div>
             
             <p className="font-cairo text-muted-grey text-sm">
-              © 2025 سيباق برو. جميع الحقوق محفوظة.
+              {language === 'ar' ? '© 2025 سيباق برو. جميع الحقوق محفوظة.' : '© 2025 SeBaaq Pro. All rights reserved.'}
             </p>
           </div>
         </div>

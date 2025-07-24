@@ -1,5 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const videos = [
   {
@@ -23,6 +24,7 @@ const videos = [
 ];
 
 const VideoSection = () => {
+  const { language } = useLanguage();
   const videoRefs = useRef<(HTMLIFrameElement | null)[]>([]);
 
   useEffect(() => {
@@ -56,10 +58,10 @@ const VideoSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="font-cairo font-bold text-4xl md:text-5xl lg:text-6xl mb-6 text-white">
-            اشهد الإثارة
+            {language === 'ar' ? 'اشهد الإثارة' : 'Witness the Thrill'}
           </h2>
           <p className="font-cairo text-lg md:text-xl text-muted-grey max-w-3xl mx-auto leading-relaxed">
-            انغمس أعمق في الواقعية وإمكانيات محاكيات سيباق برو.
+            {language === 'ar' ? 'انغمس أعمق في الواقعية وإمكانيات محاكيات سيباق برو.' : 'Immerse yourself deeper into the realism and capabilities of SeBaaq Pro simulators.'}
           </p>
         </div>
 
@@ -104,7 +106,7 @@ const VideoSection = () => {
                 {video.highlighted && video.movements && (
                   <div className="space-y-3">
                     <h4 className="font-cairo font-semibold text-racing-red text-xl mb-4">
-                      درجات الحرية الثلاث (3 DOF)
+                      {language === 'ar' ? 'درجات الحرية الثلاث (3 DOF)' : 'Three Degrees of Freedom (3 DOF)'}
                     </h4>
                     {video.movements.map((movement, idx) => (
                       <div 
@@ -122,7 +124,7 @@ const VideoSection = () => {
 
                 {video.featured && (
                   <button className="racing-glow-button mt-6">
-                    شاهد المزيد
+                    {language === 'ar' ? 'شاهد المزيد' : 'Watch More'}
                   </button>
                 )}
               </div>

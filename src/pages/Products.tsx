@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Products = () => {
+  const { language } = useLanguage();
   const simulators = [
     {
       id: 'a2-pro',
@@ -139,7 +141,7 @@ const Products = () => {
               </p>
 
               <button className="w-full bg-racing-red/20 hover:bg-racing-red/30 border border-racing-red/30 text-white px-4 py-2 rounded-lg transition-all duration-300 font-cairo">
-                عرض التفاصيل
+                {language === 'ar' ? 'عرض التفاصيل' : 'View Details'}
               </button>
             </div>
           </Link>
@@ -153,23 +155,23 @@ const Products = () => {
       <div className="container mx-auto px-6 py-8">
         <Link to="/" className="inline-flex items-center text-racing-red hover:text-white transition-colors mb-8">
           <ArrowRight className="ml-2 h-5 w-5" />
-          العودة للرئيسية
+          {language === 'ar' ? 'العودة للرئيسية' : 'Back to Home'}
         </Link>
 
         <div className="text-center mb-16">
           <h1 className="font-cairo font-black text-5xl md:text-7xl mb-6 text-white hero-text-outline">
-            منتجاتنا
+            {language === 'ar' ? 'منتجاتنا' : 'Our Products'}
           </h1>
           <p className="text-lg md:text-xl text-light-grey leading-relaxed max-w-3xl mx-auto">
-            اكتشف مجموعة محاكيات السباق المتطورة من سيباق برو
+            {language === 'ar' ? 'اكتشف مجموعة محاكيات السباق المتطورة من سيباق برو' : 'Discover SeBaaq Pro\'s advanced racing simulator collection'}
           </p>
         </div>
 
         <div className="max-w-7xl mx-auto">
-          {renderProductSection(simulators, 'محاكيات السباق')}
-          {renderProductSection(seats, 'مقاعد السباق')}
-          {renderProductSection(displayStands, 'حوامل الشاشات')}
-          {renderProductSection(accessories, 'الإكسسوارات')}
+          {renderProductSection(simulators, language === 'ar' ? 'محاكيات السباق' : 'Racing Simulators')}
+          {renderProductSection(seats, language === 'ar' ? 'مقاعد السباق' : 'Racing Seats')}
+          {renderProductSection(displayStands, language === 'ar' ? 'حوامل الشاشات' : 'Display Stands')}
+          {renderProductSection(accessories, language === 'ar' ? 'الإكسسوارات' : 'Accessories')}
         </div>
       </div>
     </div>

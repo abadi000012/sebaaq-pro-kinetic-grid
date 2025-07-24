@@ -2,8 +2,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Truck, Shield, Headphones, Star, Zap } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Services = () => {
+  const { language } = useLanguage();
   const services = [
     {
       icon: <Star className="h-8 w-8" />,
@@ -68,20 +70,23 @@ const Services = () => {
       <div className="container mx-auto px-6 py-8">
         <Link to="/" className="inline-flex items-center text-racing-red hover:text-white transition-colors mb-8">
           <ArrowRight className="ml-2 h-5 w-5" />
-          العودة للرئيسية
+          {language === 'ar' ? 'العودة للرئيسية' : 'Back to Home'}
         </Link>
 
         {/* Page Title */}
         <div className="text-center mb-16">
           <h1 className="font-cairo font-black text-5xl md:text-7xl mb-6 text-white hero-text-outline">
-            خدماتنا
+            {language === 'ar' ? 'خدماتنا' : 'Our Services'}
           </h1>
           <div className="max-w-4xl mx-auto">
             <h2 className="font-cairo font-bold text-2xl md:text-3xl text-racing-red mb-6">
-              ايش نقدم في سباق برو؟
+              {language === 'ar' ? 'ايش نقدم في سباق برو؟' : 'What do we offer at SeBaaq Pro?'}
             </h2>
             <p className="text-lg md:text-xl text-light-grey leading-relaxed">
-              في "سباق برو"، نقدم لكم مجموعة متكاملة من الخدمات اللي تخلي تجربة الحصول على أجهزة المحاكاة الاحترافية سهلة وممتعة. هدفنا نوصلكم لأقوى تجارب الواقع الافتراضي والمحاكاة، ونضمن لكم جودة المنتج وراحته في التوصيل.
+              {language === 'ar' 
+                ? 'في "سباق برو"، نقدم لكم مجموعة متكاملة من الخدمات اللي تخلي تجربة الحصول على أجهزة المحاكاة الاحترافية سهلة وممتعة. هدفنا نوصلكم لأقوى تجارب الواقع الافتراضي والمحاكاة، ونضمن لكم جودة المنتج وراحته في التوصيل.'
+                : 'At SeBaaq Pro, we offer you a comprehensive set of services that make the experience of getting professional simulation devices easy and enjoyable. Our goal is to bring you the most powerful virtual reality and simulation experiences, and guarantee you product quality and delivery comfort.'
+              }
             </p>
           </div>
         </div>
@@ -125,13 +130,13 @@ const Services = () => {
               to="/products" 
               className="racing-glow-button"
             >
-              استكشف منتجاتنا
+              {language === 'ar' ? 'استكشف منتجاتنا' : 'Explore Our Products'}
             </Link>
             <Link 
               to="/about" 
               className="bg-charcoal hover:bg-racing-red/20 border border-racing-red/30 text-white px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,0,0,0.3)]"
             >
-              من نحن
+              {language === 'ar' ? 'من نحن' : 'About Us'}
             </Link>
           </div>
         </div>
